@@ -1,0 +1,12 @@
+#sign-in-btn{
+  background-color: #001D39;
+  text-transform: none;
+}
+
+#sign-in-btn:hover{
+  background-color: #003569;
+}
+
+#register-btn{
+  text-transform: none;
+}
