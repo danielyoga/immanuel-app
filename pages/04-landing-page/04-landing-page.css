@@ -1,3 +1,11 @@
 .nav-wrapper{
   background-color: #001D39;
 }
+
+.sidenav{
+  background-color: #001D39;
+}
+
+.sidenav li a{
+  color: #ffffff;
+}
