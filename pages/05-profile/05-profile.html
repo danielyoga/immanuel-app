@@ -33,12 +33,24 @@
             <div class="nav-wrapper" style="background-color: #001D39;">
               <a href="#!" class="brand-logo"> <h5> Profile </h5> </a>
               <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
+              
+              <!-- Dropdown Trigger -->
+            <a class='dropdown-button btn right' href='#' data-activates='dropdown1'>Menu</a>
+
+              <ul id='dropdown1' class="right hide-on-med-and-down dropdown-content">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">Kegiatan</a></li>
+                <li><a href="#">Media</a></li>
+                <li><a href="#">Berita</a></li>
+                <li><a href="#">Saran & Kritik</a></li>
+                <li><a href="#">Pray</a></li>
               </ul>
             </div>
           </nav>
+
+          
+          
 
       </div>
     </div>
@@ -146,9 +158,16 @@
     <!-- JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
+
       $(document).ready(function(){
         $('.sidenav').sidenav();
       });
     </script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.dropdown-trigger');
+    var instances = M.Dropdown.init(elems, options);
+  });</script>
   </body>
 </html>
