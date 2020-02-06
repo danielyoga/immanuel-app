@@ -25,9 +25,9 @@
   </head>
 
   <body>
-
-      <!-- NAVBAR -->
-      <?php require '../../global/navbar.php' ?>
+    
+    <!-- NAVBAR -->
+    <?php require '../../global/navbar.php' ?>
           
     <br>
 
