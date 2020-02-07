@@ -10,7 +10,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <link rel="stylesheet" href="04-landing-page.css">
+    <link rel="stylesheet" href="04-home.css">
 
     <!-- Compiled minified Jquery -->
     <script
@@ -25,45 +25,18 @@
 
   <body>
 
-      <!-- top bar -->        
-      <div class="container-fluid">
-        <div class="navbar-fixed">
-
-          <nav>
-            <div class="nav-wrapper">
-              <a href="#!" class="brand-logo">Logo</a>
-              <a href="#" data-target="mobile-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="#">Menu 1</a></li>
-                <li><a href="#">Menu 2</a></li>
-              </ul>
-            </div>
-          </nav>
-
+      <!-- NAVBAR -->
+    <nav>
+      <div class="nav-wrapper"">
+        <a href="#" class="white-text">LOGO</a>
       </div>
-    </div>
-
-    <!-- sidenav bar -->
-    <ul class="sidenav" id="mobile-menu">
-      
-        <!-- <a href="#" class="brand-logo">   -->
-          <!-- TODO: clean code -->
-          <!-- <img src="../../img/logo.png" style="width: 80%;margin: 0;"> -->
-        <!-- </a> -->
-
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Profile</a></li>
-      <li><a href="#">Kegiatan</a></li>
-      <li><a href="#">Media</a></li>
-      <li><a href="#">Berita</a></li>
-      <li><a href="#">Saran & Kritik</a></li>
-      <li><a href="#">Pray</a></li>
-    </ul>
+    </nav>
           
     
 
     <div class="container">
 
+        <a href="../05-profile/05-profile.php">
         <!-- card 1 -->
         <div class="row">
             <div class="col m3"></div>
@@ -92,7 +65,8 @@
 
                 </div>
 
-            </div>   
+            </div>  
+            </a> 
 
             </div>
             <div class="col m3"></div>

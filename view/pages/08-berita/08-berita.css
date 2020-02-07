@@ -1,0 +1,21 @@
+* {
+  font-family: arial;
+}
+
+.sidenav{
+  background-color: #001D39;
+}
+
+.sidenav li a{
+  color: #ffffff;
+}
+
+#nama_anak{
+  font-weight: bold;
+  color: #2699FB;
+}
+
+#nama_kelas{
+  font-weight: bold;
+  text-transform: capitalize;
+}

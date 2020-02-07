@@ -4,31 +4,26 @@
 
         <nav>
         <div class="nav-wrapper" style="background-color: #001D39;">
-            <a href="#!" class="brand-logo"> <h5> Profile </h5> </a>
             <!-- Back Button Trigger -->
-            <a href="#home" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
+            <a href="../04-home/04-home.php" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-            
-            <ul class="right hide-on-med-and-down">
-            <li><a href="#">Home</a></li>
+            <ul class="left hide-on-med-and-down">
+            <li><a href="../04-home/04-home.php"><i class="material-icons">arrow_back</i></a></li>
+            </ul>
 
-            <!-- Dropdown Children Trigger -->
-            <li>
-                <a class="dropdown-trigger" href="#!" data-target="menu-group-children">
-                Children<i class="material-icons right">arrow_drop_down</i>
-                </a>
-            </li>
-            <!-- Dropdown Events Trigger -->
-            <li>
-                <a class="dropdown-trigger" href="#!" data-target="menu-group-events">
-                Events<i class="material-icons right">arrow_drop_down</i>
-                </a>
-            </li>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="../../pages/05-profile/05-profile.php">Profile</a></li>
+                <li><a href="../../pages/06-kegiatan/06-kegiatan.php">Kegiatan</a></li>
+                <li><a href="../../pages/08-berita/08-berita.php">Berita</a></li>
+
+            
+
             <!-- Dropdown Misc Trigger -->
             <li>
                 <a class="dropdown-trigger" href="#!" data-target="menu-group-misc">
-                Misc<i class="material-icons right">arrow_drop_down</i>
+                Bantuan Doa
+                <i class="material-icons right">arrow_drop_down</i>
                 </a>
             </li>
 
@@ -43,22 +38,11 @@
     </div>
 </div>
 
-<!-- dropdown menu group children -->
-<ul id='menu-group-children' class="dropdown-content">
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Kegiatan</a></li>
-</ul>
-
-<!-- dropdown menu group events -->
-<ul id='menu-group-events' class="dropdown-content">
-    <li><a href="#">Media</a></li>
-    <li><a href="#">Berita</a></li>
-</ul>
 
 <!-- dropdown menu group misc -->
-<ul id='menu-group-misc' class="dropdown-content">
-    <li><a href="#">Saran & Kritik</a></li>
-    <li><a href="#">Pray</a></li>
+<ul id='menu-group-misc' class="dropdown-content" style="background-color: #001D39;" >
+    <li><a class="white-text" href="../09-saran-kritik/09-saran-kritik.php">Saran & Kritik</a></li>
+    <li><a class="white-text" href="../10-pray/10-pray.php">Pray</a></li>
 </ul>
 
 <!-- sidenav bar -->
@@ -69,11 +53,9 @@
         <!-- <img src="../../img/logo.png" style="width: 80%;margin: 0;"> -->
     </a>
 
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Profile</a></li>
-    <li><a href="#">Kegiatan</a></li>
-    <li><a href="#">Media</a></li>
-    <li><a href="#">Berita</a></li>
-    <li><a href="#">Saran & Kritik</a></li>
-    <li><a href="#">Pray</a></li>
+    <li><a href="../../pages/05-profile/05-profile.php">Profile</a></li>
+    <li><a href="../../pages/06-kegiatan/06-kegiatan.php">Kegiatan</a></li>
+    <li><a href="../../pages/08-berita/08-berita.php">Berita</a></li>
+    <li><a href="../09-saran-kritik/09-saran-kritik.php">Saran & Kritik</a></li>
+    <li><a href="../10-pray/10-pray.php">Pray</a></li>
 </ul>
