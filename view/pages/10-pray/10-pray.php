@@ -42,12 +42,26 @@
 
     <div class="row">
       <div class="col s4 m3 l5"></div>
-      <a href="#" class="waves-effect waves-light btn s4 m6 l4">Kirim</a>
+      
+    </div>
+
+    <div class="container center-align">
+      <!-- button kirim -->
+    <a href="#" class="waves-effect waves-light btn s4 m6 l4">Kirim</a>
+    <br><br>
+
+      <!-- konseling button -->
+    <a href="#" class="waves-effect waves-light btn s10 m6 l4">
+      <span>
+      <i class="material-icons">message</i>
+      Konseling via Whatsapp
+      </span>
+    </a>
     </div>
    
     <div class="row">
       <div class="col s2 m3 l4"></div>
-      <a href="#" class="waves-effect waves-light btn s10 m6 l4">Konseling via Whatsapp</a>
+      
     </div>
 
     <!-- Compiled and minified JavaScript -->
