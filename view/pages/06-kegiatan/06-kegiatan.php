@@ -29,36 +29,101 @@
     <!-- NAVBAR -->
     <?php require '../../global/navbar.php' ?>
           
-
-    <!-- Kegiatan 1 -->
+    
     <div class="container">
-    <a href="../07-kegiatan-detail/07-kegiatan-detail.php">
       <div class="row">
-      
-      <div class="card">
 
-        <div class="card-content black-text">
-          
-          <div class="row">
-          <i class="material-icons col s3">date_range</i>
-          <p class="flow-text col s9">Tanggal</p>
-          </div>
+        <!-- =============== -->
+        <!-- CARD 1 -->
+        <!-- =============== -->
 
-          <div class="row">
-          <img class="col s3 m2 l1" src="../../icon-assets/bible-icon.png" alt="">
-          <h4 class="flow-text col s9">Judul Kotbah</h4>
-          </div>
-          
-          <div class="row">
-          <!-- Modal Trigger -->
-          <h1 class="waves-effect black white-text btn col s8 m6 l4" href="#modal1">>Ayat kotbah</h1>
-          </div>
+        <div class="col s12 m6">
+        <a href="../07-kegiatan-detail/07-kegiatan-detail.php">
+          <div class="card">
 
-      </div>
-      
-      </div>
-      </a>
-    </div>
+            <!-- Card Date -->
+            <div class="card-action black-text">
+                <i class="material-icons">date_range</i>
+                  Minggu, 01-02-2019
+            </div>
+
+            <div class="card-content black-text">
+
+              <!-- Card Title -->
+              <span class="card-title">
+                  <img src="../../icon-assets/bible-icon.png" style="width:8%;">
+                  Kelahiran Tuhan Yesus 
+              </span>
+            
+              <!-- Card Ayat -->
+              <span class="card-action">
+                <h5 class="left btn black white-text" style="border-radius:25px;">
+                    Matius 1 : 18 - 25
+                </h5>
+                <br>
+              </span>
+
+            </div>
+
+            <!-- Card Description -->
+            <div class="card-action black-text">
+              <p>
+                I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+
+          </div> <!-- end | card -->
+        </a>
+        </div> <!-- end | col -->
+
+
+        <!-- =============== -->
+        <!-- CARD 2 -->
+        <!-- =============== -->
+
+        <div class="col s12 m6">
+        <a href="../07-kegiatan-detail/07-kegiatan-detail.php">
+          <div class="card">
+
+            <!-- Card Date -->
+            <div class="card-action black-text">
+                <i class="material-icons">date_range</i>
+                  Minggu, 01-02-2019
+            </div>
+
+            <div class="card-content black-text">
+
+              <!-- Card Title -->
+              <span class="card-title">
+                  <img src="../../icon-assets/bible-icon.png" style="width:8%;">
+                  Kelahiran Tuhan Yesus 
+              </span>
+            
+              <!-- Card Ayat -->
+              <span class="card-action">
+                <h5 class="left btn black white-text" style="border-radius:25px;">
+                    Matius 1 : 18 - 25
+                </h5>
+                <br>
+              </span>
+
+            </div>
+
+            <!-- Card Description -->
+            <div class="card-action black-text">
+              <p>
+                I am a very simple card. I am good at containing small bits of information.
+                I am convenient because I require little markup to use effectively.
+              </p>
+            </div>
+
+          </div> <!-- end | card -->
+        </a>
+        </div> <!-- end | col -->
+
+      </div><!-- end | row -->
+    </div> <!-- end | container -->
 
 
 

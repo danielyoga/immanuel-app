@@ -58,7 +58,7 @@
           <div class="row">
 
             <div class="col s6 m3 ">
-              <div class="card">
+              <div class="card center">
                 <div class="card-content black-text">
                   <img src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
                   <span class="card-title center-align">Nike</span>
