@@ -15,8 +15,6 @@
   color: #2699FB;
 }
 
-#nama_kelas{
-  font-weight: bold;
-  text-transform: capitalize;
-  letter-spacing: 100px;
+#nama_kelas {
+  letter-spacing: 10px;
 }

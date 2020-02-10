@@ -10,7 +10,7 @@
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-    <link rel="stylesheet" href="05-profile.css">
+    
 
     <!-- Compiled minified Jquery -->
     <script
@@ -21,6 +21,8 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>belajar materialize</title>
+
+    <link rel="stylesheet" href="05-profile.css">
 
   </head>
 
@@ -37,6 +39,7 @@
 
     <br>
 
+    <div class="container center-align">
     <!-- photo profile anak -->
     <div class="row">
       <div class="col s3 m4 l5"></div>
@@ -49,7 +52,10 @@
     <br>
       <!-- nama kelas -->
       <!-- comment: biasakan buat menggunakan css untuk letter spacingnya -->
-    <h4 class="center-align" id="nama_kelas" >"Dekapolis"</h3>
+    <span id="nama_kelas"> <h4 style="font-weight: bold;">"Dekapolis"</h4> </span>
+
+
+    </div>
 
         
 <div class="container">
