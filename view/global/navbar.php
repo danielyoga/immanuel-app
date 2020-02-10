@@ -1,3 +1,11 @@
+<script>
+function logout(){
+    unSetCookie("jwt");
+    var url= "login.php"; 
+    window.location = url; 
+}
+</script>
+
 <!-- top bar -->        
 <div class="container-fluid">
     <div class="navbar-fixed">
@@ -23,8 +31,7 @@
                 <li><a class="white-text" href="../10-pray/10-pray.php">Pray</a></li>
 
 
-            <!-- log out , cara 1 hapus cookie -->
-            <li><a href="javascript:unSetCookie('jwt')">Log Out</a></li>
+            <li><a href="javascript:logout();">Log Out</a></li>
             </ul>
 
         </div>
@@ -51,6 +58,6 @@
     <li><a href="../../pages/08-berita/08-berita.php">Berita</a></li>
     <li><a href="../09-saran-kritik/09-saran-kritik.php">Saran & Kritik</a></li>
     <li><a href="../10-pray/10-pray.php">Pray</a></li>
-    <li><a href="javascript:unSetCookie('jwt')"><i class="material-icons" style="color: white;">close</i>Log Out</a></li>
+    <li><a href="javascript:logout();"><i class="material-icons" style="color: white;">close</i>Log Out</a></li>
     
 </ul>

@@ -8,47 +8,50 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
 // files needed to connect to database
 include_once '../config/database.php';
-include_once '../objects/user.php';
+include_once '../objects/children.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-$user = new User($db);
+$children = new Children($db);
  
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
- 
+
+
+
 // set product property values
-$user->title = $data->title;
-$user->name = $data->name;
-$user->phone_number = $data->phone_number;
-$user->password = $data->password;
+$children->parent_id = $data->parent_id;
+$children->class_id = $data->class_id;
+$children->name = $data->name;
+$children->nickname = $data->nickname;
+$children->photo = $data->photo;
  
-// create the user
-if(
-    !empty($user->title) &&
-    !empty($user->name) &&
-    !empty($user->phone_number) &&
-    !empty($user->password) &&
-    $user->create()
+// create the children
+if( !empty($children->parent_id) &&
+    !empty($children->class_id) &&
+    !empty($children->name) &&
+    !empty($children->nickname) &&
+    !empty($children->photo) &&
+    $children->create()
 ){
  
     // set response code
     http_response_code(200);
  
-    // display message: user was created
-    echo json_encode(array( "error" => false, "message" => "User was created."));
+    // display message: children was created
+    echo json_encode(array( "error" => false, "message" => "Child was created."));
 }
  
-// message if unable to create user
+// message if unable to create children
 else{
  
     // set response code
     http_response_code(400);
  
-    // display message: unable to create user
-    echo json_encode(array( "error" => true, "message" => "Unable to create user."));
+    // display message: unable to create children
+    echo json_encode(array( "error" => true, "message" => "Unable to create children."));
 }
 ?>
