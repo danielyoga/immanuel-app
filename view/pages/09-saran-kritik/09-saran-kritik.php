@@ -32,6 +32,7 @@
 
     <div class="container">
       
+      <!-- form input -->
       <form action="">
         <div class="input-field col s12">
           <textarea id="textarea1" class="materialize-textarea"></textarea>
@@ -39,9 +40,9 @@
         </div>
       </form>
 
-      <div class="row">
-        <div class="col s1 m3 l5"></div>
-        <a href="#" class="waves-effect waves-light btn s10 m6 l4">Kirim</a>
+      <!-- button "kirim" -->
+      <div class="container center-align">
+      <a href="#" class="waves-effect waves-light btn ">Kirim</a>
       </div>
     </div>
    

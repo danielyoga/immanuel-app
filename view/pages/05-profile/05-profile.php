@@ -31,6 +31,7 @@
           
     <br>
 
+
       <!-- nama anak -->
     <h3 class="center-align" id="nama_anak">Andi</h3>
 
@@ -40,70 +41,75 @@
     <div class="row">
       <div class="col s3 m4 l5"></div>
       <div class="col s6 m4 l2">
-        <!-- img -->
+      <!-- img -->
         <img style="border: 1px solid black;" src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
       </div>
       <div class="col s3 m4 l5"></div>
     </div>
-
     <br>
       <!-- nama kelas -->
       <!-- comment: biasakan buat menggunakan css untuk letter spacingnya -->
-    <h4 class="center-align" id="nama_kelas">" D e k a p o l i s "</h3>
+    <h4 class="center-align" id="nama_kelas" >"Dekapolis"</h3>
 
-    
+        
+<div class="container">
+  <div class="row">
 
-        <!-- card guru -->
-        <div class="container">
-          <div class="row">
 
-            <div class="col s6 m3 ">
-              <div class="card center">
-                <div class="card-content black-text">
-                  <img src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
-                  <span class="card-title center-align">Nike</span>
-                </div>
-                <div class="card-action">
-                  <a class="btn" href="#">Whatsapp</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s6 m3 ">
-              <div class="card">
-                <div class="card-content black-text">
-                  <img src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
-                  <span class="card-title center-align">Nike</span>
-                </div>
-                <div class="card-action">
-                  <a class="btn" href="#">Whatsapp</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s6 m3 ">
-              <div class="card">
-                <div class="card-content black-text">
-                  <img src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
-                  <span class="card-title center-align">Nike</span>
-                </div>
-                <div class="card-action">
-                  <a class="btn" href="#">Whatsapp</a>
-                </div>
-              </div>
-            </div>
-            <div class="col s6 m3">
-              <div class="card">
-                <div class="card-content black-text">
-                  <img src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
-                  <span class="card-title center-align">Nike</span>
-                </div>
-                <div class="card-action">
-                  <a class="btn" href="#">Whatsapp</a>
-                </div>
-              </div>
-            </div>
-            
+    <!-- card 1 -->
+    <div class="card col s4 l3">
+
+        <!-- profile picture guru -->
+        <div class="card-img">
+        <img src="../../img/user.png" alt="" class="circle responsive-img" style="border:2px solid black;"/>
+          <span class="card-title"></span>
+        </div>
+
+        <!-- name -->
+        <div class="card-content center-align">
+          <span>yoga</span>
+        </div>
+        
+        <!-- button whatsapp -->
+        <div class="row">
+          <div class="card-action">
+            <span class="btn col s12"> <i class="material-icons">message</i> </span>
           </div>
         </div>
+
+    </div> <!-- div card -->
+
+    <!-- card 2 -->
+    <div class="card col s4 l3">
+
+        <!-- profile picture guru -->
+        <div class="card-img">
+        <img src="../../img/user.png" alt="" class="circle responsive-img" style="border:2px solid black;"/>
+          <span class="card-title"></span>
+        </div>
+
+        <!-- name -->
+        <div class="card-content center-align">
+          <span>yoga</span>
+        </div>
+        
+        <!-- button whatsapp -->
+        <div class="row">
+          <div class="card-action">
+            <span class="btn col s12"> <i class="material-icons">message</i> </span>
+          </div>
+        </div>
+
+    </div> <!-- div card -->
+
+
+
+  </div> <!-- row div end -->
+</div> <!-- container div end -->
+
+
+
+
 
     <!-- add photo button -->
     <div class="fixed-action-btn">
@@ -111,6 +117,11 @@
         <i class="large material-icons light-blue darken-4">add_a_photo</i>
       </a>
     </div>
+
+
+
+
+
 
     <!-- Compiled and minified JavaScript -->
     <!-- JavaScript at end of body for optimized loading-->
