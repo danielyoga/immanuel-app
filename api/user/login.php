@@ -43,7 +43,7 @@ if($email_exists && password_verify($data->password, $user->password)){
        "nbf" => $nbf,
        "data" => array(
            "id" => $user->id,
-           "lastname" => $user->name,
+           "name" => $user->name,
            "email" => $user->email
        )
     );
