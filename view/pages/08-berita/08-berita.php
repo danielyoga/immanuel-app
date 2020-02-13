@@ -30,10 +30,30 @@
     <?php require '../../global/navbar.php' ?>
           
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col s2 m3 l4"></div>
-        <img src="../../img/event.png" alt="" class="responsive-img col s8 m6 l4"/>
+    <div class="container">
+      <div class="row center">
+
+        <h1>Berita</h1>
+        <hr>
+
+        <br><br>
+
+        <span id="event-container">
+
+            <div class="col s12 m4">
+              <img src="../../img/event.png" class="responsive-img materialboxed"/>
+            </div>
+
+            <div class="col s12 m4">
+              <img src="../../img/event.png" class="responsive-img materialboxed"/>
+            </div>
+
+            <div class="col s12 m4">
+              <img src="../../img/event.png" class="responsive-img materialboxed"/>
+            </div>
+
+        </span>
+
       </div>
     </div>
    
@@ -46,14 +66,12 @@
 
     <script>
       $(document).ready(function(){
-        // letakkan initialize object di dalam document ready
-        // jika tidak maka javascript tidak akan menginitialize object tersebut,
-        // ketika document/halaman sudah siap
         $('.sidenav').sidenav({
           edge: 'right', // Choose the horizontal origin
           closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
         });
         $('.dropdown-trigger').dropdown();
+        $('.materialboxed').materialbox();
 
         // store jwt to cookie
         setCookie("jwt", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxMzU2OTk5NTI0LCJuYmYiOjEzNTcwMDAwMDAsImRhdGEiOnsiaWQiOiIxIiwibGFzdG5hbWUiOiJwYXJlbnQxIiwiZW1haWwiOiJwYXJlbnQxQGVtYWlsLmNvbSJ9fQ.PeGa_mKzIwZRPIPkRy9jCtPtNJfeFob__1dkd2CPDaA", 1);

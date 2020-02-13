@@ -32,31 +32,48 @@
 
     <!-- Kegiatan 1 -->
     <div class="container">
-      <div class="col s12">
-        <div class="card center">
+
+        <h2>Detil Kegiatan</h2>
+        <hr>
+        <br><br>
 
         <!-- tanggal kotbah -->
         <div class="row">
-          <div class="col s12">
-            <i class="material-icons medium">date_range</i>
-            <p class="col flow-text">Minggu, 12-012-2020</p>
-          </div>
+          <i class="material-icons medium col s1">date_range</i>
+          <div class="col s1"></div>
+          <p class="col 8 flow-text">Minggu, 12-012-2020</p>
         </div>
 
         <!-- judul kotbah -->
         <div class="row">
           <img src="../../icon-assets/bible-icon.png" alt="" class="col s3 m2 l1">
           <div class="col s1"></div>
-          <p class="left col s flow-text">Kelahiran Tuhan Yesus</p>
+          <p class="left col 11 flow-text">Kelahiran Tuhan Yesus</p>
         </div>
 
         <h6 href="#" class="waves-effect waves-light btn black white-text">Matius 1:18-25</h6>
         <p class="flow-text">Oleh : Tante Hana</p>
         <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    
-      </div>
-    </div>
-  </div> <!-- end-->
+        
+        <br>
+        <hr style="width:70%;height:5px;background-color:black;">
+        <br>
+
+        <!-- foto media -->
+        <div class="row center">
+          <h2>MEDIA</h2>
+          <br><br>
+          <div class="col s12 m4">
+            <img class="responsive-img materialboxed" src="../../img/dummy-activity.jpg">
+          </div>
+          <div class="col s12 m4">
+            <img class="responsive-img materialboxed" src="../../img/dummy-activity.jpg">
+          </div>
+          <div class="col s12 m4">
+            <img class="responsive-img materialboxed" src="../../img/dummy-activity.jpg">
+          </div>
+        </div>
+      </div> <!-- end-->
 
 
 
@@ -68,14 +85,12 @@
 
     <script>
       $(document).ready(function(){
-        // letakkan initialize object di dalam document ready
-        // jika tidak maka javascript tidak akan menginitialize object tersebut,
-        // ketika document/halaman sudah siap
         $('.sidenav').sidenav({
           edge: 'right', // Choose the horizontal origin
           closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
         });
         $('.dropdown-trigger').dropdown();
+        $('.materialboxed').materialbox();
 
         // store jwt to cookie
         setCookie("jwt", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9leGFtcGxlLm9yZyIsImF1ZCI6Imh0dHA6XC9cL2V4YW1wbGUuY29tIiwiaWF0IjoxMzU2OTk5NTI0LCJuYmYiOjEzNTcwMDAwMDAsImRhdGEiOnsiaWQiOiIxIiwibGFzdG5hbWUiOiJwYXJlbnQxIiwiZW1haWwiOiJwYXJlbnQxQGVtYWlsLmNvbSJ9fQ.PeGa_mKzIwZRPIPkRy9jCtPtNJfeFob__1dkd2CPDaA", 1);
