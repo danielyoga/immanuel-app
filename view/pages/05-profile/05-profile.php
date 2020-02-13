@@ -32,79 +32,86 @@
     <br>
 
 
-      <!-- nama anak -->
-    <h3 class="center-align" id="nama_anak">Andi</h3>
+    <div class="container">
 
-    <br>
 
-    <!-- photo profile anak -->
+        <!-- photo profile anak -->
+        <div class="row">
+          <div class="col m4"></div>
+          <div class="col s12 m4 center">
+            <!-- nama anak -->
+            <h3 class="" id="nama_anak">Andi</h3>
+
+            <!-- img -->
+            <img style="border: 1px solid black;" src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
+          
+            <!-- nama kelas -->
+            <h4 id="nama_kelas" >"Dekapolis"</h4>
+          </div>
+          <div class="col m4"></div>
+        </div>
+
+
+
+    <hr style="width:70%;height:5px;background-color:black;">
+    
+
+    <!-- nama kelas -->
     <div class="row">
-      <div class="col s3 m4 l5"></div>
-      <div class="col s6 m4 l2">
-      <!-- img -->
-        <img style="border: 1px solid black;" src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
+      <div class="col s12 center">
+        <h2>Teacher List</h2>
       </div>
-      <div class="col s3 m4 l5"></div>
     </div>
-    <br>
-      <!-- nama kelas -->
-      <!-- comment: biasakan buat menggunakan css untuk letter spacingnya -->
-    <h4 class="center-align" id="nama_kelas" >"Dekapolis"</h3>
+    
 
-        
-<div class="container">
   <div class="row">
 
+    <div class="card col m1"></div>
 
     <!-- card 1 -->
-    <div class="card col s4 l3">
+    <div class="card col s12 m4 center">
 
         <!-- profile picture guru -->
         <div class="card-img">
         <img src="../../img/user.png" alt="" class="circle responsive-img" style="border:2px solid black;"/>
-          <span class="card-title"></span>
+          <span class="card-title">Yoga</span>
         </div>
 
         <!-- name -->
-        <div class="card-content center-align">
-          <span>yoga</span>
-        </div>
-        
-        <!-- button whatsapp -->
-        <div class="row">
+        <div class="card-content">
           <div class="card-action">
-            <span class="btn col s12"> <i class="material-icons">message</i> </span>
+            <span class="btn"> <i class="material-icons">message</i> </span>
           </div>
         </div>
+        
 
     </div> <!-- div card -->
+
+    <div class="card col m2"></div>
 
     <!-- card 2 -->
-    <div class="card col s4 l3">
+    <div class="card col s12 m4 center">
 
         <!-- profile picture guru -->
         <div class="card-img">
         <img src="../../img/user.png" alt="" class="circle responsive-img" style="border:2px solid black;"/>
-          <span class="card-title"></span>
+          <span class="card-title">Yoga</span>
         </div>
 
         <!-- name -->
-        <div class="card-content center-align">
-          <span>yoga</span>
-        </div>
-        
-        <!-- button whatsapp -->
-        <div class="row">
+        <div class="card-content">
           <div class="card-action">
-            <span class="btn col s12"> <i class="material-icons">message</i> </span>
+            <span class="btn"> <i class="material-icons">message</i> </span>
           </div>
         </div>
 
     </div> <!-- div card -->
 
+    <div class="card col m1"></div>
 
-
+  
   </div> <!-- row div end -->
+
 </div> <!-- container div end -->
 
 

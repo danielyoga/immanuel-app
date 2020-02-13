@@ -5,6 +5,7 @@ $(document).ready(function() {
         closeOnClick: true
       });
     $('.dropdown-trigger').dropdown();
+    $('.datepicker').datepicker();
 
     // ====================================
     // validation
@@ -34,6 +35,7 @@ $(document).ready(function() {
 
     $.ajax({
         url: "http://localhost/immanuel-app/api/class/getall.php" ,
+        type : "GET",
         contentType: "application/json",
         dataType: 'json',
         success: function(result){
@@ -55,7 +57,9 @@ $(document).ready(function() {
 
         },
         error: function(xhr, resp, text){
-            alert('error page, please call admin.');
+            alert('something wrong, please call admin.');
+            var url= "home.php"; 
+            window.location = url; 
         }
     })
 

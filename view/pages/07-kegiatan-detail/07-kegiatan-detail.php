@@ -32,25 +32,31 @@
 
     <!-- Kegiatan 1 -->
     <div class="container">
-      <div class="row">
-      
-          
-          <div class="row">
-          <i class="material-icons col s2">date_range</i>
-          <p class="flow-text col s10">Tanggal</p>
-          </div>
+      <div class="col s12">
+        <div class="card center">
 
-          <div class="row">
-          <img class="col s3 m2 l1" src="../../icon-assets/bible-icon.png" alt="">
-          <h4 class="flow-text col s9">Judul Kotbah</h4>
+        <!-- tanggal kotbah -->
+        <div class="row">
+          <div class="col s12">
+            <i class="material-icons medium">date_range</i>
+            <p class="col flow-text">Minggu, 12-012-2020</p>
           </div>
-          
-          <div class="row">
-          <!-- Modal Trigger -->
-          <h1 class="waves-effect black white-text btn col s8 m6 l4" href="#modal1">>Ayat kotbah</h1>
-          </div>
+        </div>
 
+        <!-- judul kotbah -->
+        <div class="row">
+          <img src="../../icon-assets/bible-icon.png" alt="" class="col s3 m2 l1">
+          <div class="col s1"></div>
+          <p class="left col s flow-text">Kelahiran Tuhan Yesus</p>
+        </div>
+
+        <h6 href="#" class="waves-effect waves-light btn black white-text">Matius 1:18-25</h6>
+        <p class="flow-text">Oleh : Tante Hana</p>
+        <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    
+      </div>
     </div>
+  </div> <!-- end-->
 
 
 

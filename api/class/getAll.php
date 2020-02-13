@@ -36,7 +36,7 @@ if($num>0){
  
         $classes_item = array(
             "id" => $id,
-            "name" => $name,
+            "name" => $class_name,
         );
  
         array_push($classes_arr["records"], $classes_item);

@@ -27,7 +27,7 @@ class Children{
                 SET
                     parent_id = :parent_id,
                     class_id = :class_id,
-                    name = :name,
+                    child_name = :name,
                     nickname = :nickname,
                     photo = :photo";
     

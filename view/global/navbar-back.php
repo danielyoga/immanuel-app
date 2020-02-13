@@ -23,6 +23,9 @@ function home(){
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
+            <ul class="left hide-on-med-and-down">
+                <li><a href="javascript:home();"><i class="material-icons">home</i></a></li>
+            </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="javascript:logout();">Log Out</a></li>
             </ul>

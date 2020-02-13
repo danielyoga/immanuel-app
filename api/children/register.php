@@ -20,8 +20,6 @@ $children = new Children($db);
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
 
-
-
 // set product property values
 $children->parent_id = $data->parent_id;
 $children->class_id = $data->class_id;

@@ -95,7 +95,7 @@
         </div>
         <div class="col m3"></div>
       </div>
-      
+     
 
       <!-- Nama panggilan -->
       
@@ -107,7 +107,7 @@
         </div>
         <div class="col m3"></div>
       </div>
-      
+     
 
       <!-- pilih kelas -->
       <div class="row">
@@ -117,6 +117,7 @@
         </div>
         <div class="col m3"></div>
       </div> <!-- end div row-->
+      
 
       
       <!-- register button -->
@@ -136,7 +137,6 @@
 
 
     </form>
-
 
     <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
