@@ -9,28 +9,25 @@ header('Content-Type: application/json');
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/children.php';
+include_once '../objects/events.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare children object
-$children = new Children($db);
+// prepare event object
+$event = new events($db);
  
-// set ID property of record to read
-$children->parent_id = isset($_GET['parent_id']) ? $_GET['parent_id'] : die();
  
-// read the details of children to be edited
-$stmt = $children->getByParent();
+// read the details of event to be edited
+$stmt = $event->getEvents();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
 
-    // children array
-    $children_arr=array("error" => FALSE, "count" => $num);
-    $children_arr["records"]=array();
+    // event array
+    $event_arr=array("error" => FALSE);
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -39,34 +36,29 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $children_item=array(
-            "id" => $children_id,
-            "parent_id" => $parent_id,
-            "name" => $child_name,
-            "nickname" => $nickname,
-            "photo" => $photo,
-            "class_id" => $class_id,
-            "class_name" => $class_name
+        $event_item=array(
+            "id" => $id,
+            "date" => $date,
+            "poster" => $poster
         );
- 
-        array_push($children_arr["records"], $children_item);
+
+        array_push($event_arr, $event_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // make it json format
-    echo json_encode($children_arr);
+    echo json_encode($event_arr);
 }
 else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user children does not exist
+    // tell the user event does not exist
     echo json_encode(array(
         "error" => FALSE, 
-        "count" => $num,
-        "message" => "Children does not exist."
+        "message" => "event does not exist."
     ));
 }
 

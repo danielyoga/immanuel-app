@@ -7,7 +7,7 @@ class Children{
     private $table_name = "children";
  
     // object properties
-    public $id;
+    public $children_id;
     public $parent_id;
     public $class_id;
     public $name;
@@ -69,6 +69,28 @@ class Children{
     
         // bind parent_id of children to be updated
         $stmt->bindParam(1, $this->parent_id);
+    
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    // get all children by id
+    function getById(){
+    
+        $query = "SELECT *
+                    FROM " . $this->table_name . " child " .
+                " LEFT JOIN classes class
+                    ON child.class_id = class.id " .
+                " WHERE 
+                    children_id = ?";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+    
+        // bind parent_id of children to be updated
+        $stmt->bindParam(1, $this->children_id);
     
         // execute query
         $stmt->execute();

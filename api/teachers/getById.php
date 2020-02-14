@@ -9,28 +9,27 @@ header('Content-Type: application/json');
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/children.php';
+include_once '../objects/teachers.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare children object
-$children = new Children($db);
+// prepare teacher object
+$teacher = new teachers($db);
  
 // set ID property of record to read
-$children->parent_id = isset($_GET['parent_id']) ? $_GET['parent_id'] : die();
+$teacher->teacher_id = isset($_GET['id']) ? $_GET['id'] : die();
  
-// read the details of children to be edited
-$stmt = $children->getByParent();
+// read the details of teacher to be edited
+$stmt = $teacher->getById();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
 
-    // children array
-    $children_arr=array("error" => FALSE, "count" => $num);
-    $children_arr["records"]=array();
+    // teacher array
+    $teacher_arr=array("error" => FALSE);
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -39,34 +38,31 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $children_item=array(
-            "id" => $children_id,
-            "parent_id" => $parent_id,
-            "name" => $child_name,
-            "nickname" => $nickname,
-            "photo" => $photo,
+        $teacher_item=array(
+            "id" => $teacher_id,
             "class_id" => $class_id,
-            "class_name" => $class_name
+            "name" => $name,
+            "phone_number" => $phone_number,
+            "photo" => $photo
         );
- 
-        array_push($children_arr["records"], $children_item);
+
+        array_push($teacher_arr, $teacher_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // make it json format
-    echo json_encode($children_arr);
+    echo json_encode($teacher_arr);
 }
 else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user children does not exist
+    // tell the user teacher does not exist
     echo json_encode(array(
         "error" => FALSE, 
-        "count" => $num,
-        "message" => "Children does not exist."
+        "message" => "teacher does not exist."
     ));
 }
 

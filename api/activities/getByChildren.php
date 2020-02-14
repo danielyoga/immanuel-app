@@ -9,28 +9,28 @@ header('Content-Type: application/json');
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/children.php';
+include_once '../objects/activities.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare children object
-$children = new Children($db);
+// prepare activity object
+$activity = new Activities($db);
  
 // set ID property of record to read
-$children->parent_id = isset($_GET['parent_id']) ? $_GET['parent_id'] : die();
+$activity->child_id = isset($_GET['child_id']) ? $_GET['child_id'] : die();
  
-// read the details of children to be edited
-$stmt = $children->getByParent();
+// read the details of activity to be edited
+$stmt = $activity->getByChildren();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
 
-    // children array
-    $children_arr=array("error" => FALSE, "count" => $num);
-    $children_arr["records"]=array();
+    // activity array
+    $activity_arr=array("error" => FALSE, "count" => $num);
+    $activity_arr["records"]=array();
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -39,34 +39,32 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $children_item=array(
-            "id" => $children_id,
-            "parent_id" => $parent_id,
-            "name" => $child_name,
-            "nickname" => $nickname,
-            "photo" => $photo,
-            "class_id" => $class_id,
-            "class_name" => $class_name
+        $activity_item=array(
+            "id" => $activity_id,
+            "date" => $date,
+            "title" => $title,
+            "reference" => $reference,
+            "summary" => $summary,
+            "presenter_id" => $presenter_id
         );
- 
-        array_push($children_arr["records"], $children_item);
+
+        array_push($activity_arr["records"], $activity_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // make it json format
-    echo json_encode($children_arr);
+    echo json_encode($activity_arr);
 }
 else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user children does not exist
+    // tell the user activity does not exist
     echo json_encode(array(
         "error" => FALSE, 
-        "count" => $num,
-        "message" => "Children does not exist."
+        "message" => "activity does not exist."
     ));
 }
 

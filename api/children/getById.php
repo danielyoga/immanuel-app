@@ -19,18 +19,17 @@ $db = $database->getConnection();
 $children = new Children($db);
  
 // set ID property of record to read
-$children->parent_id = isset($_GET['parent_id']) ? $_GET['parent_id'] : die();
+$children->children_id = isset($_GET['id']) ? $_GET['id'] : die();
  
 // read the details of children to be edited
-$stmt = $children->getByParent();
+$stmt = $children->getById();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
 
     // children array
-    $children_arr=array("error" => FALSE, "count" => $num);
-    $children_arr["records"]=array();
+    $children_arr=array("error" => FALSE);
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -40,7 +39,7 @@ if($num>0){
         extract($row);
  
         $children_item=array(
-            "id" => $children_id,
+            "id" => $id,
             "parent_id" => $parent_id,
             "name" => $child_name,
             "nickname" => $nickname,
@@ -48,8 +47,8 @@ if($num>0){
             "class_id" => $class_id,
             "class_name" => $class_name
         );
- 
-        array_push($children_arr["records"], $children_item);
+
+        array_push($children_arr, $children_item);
     }
  
     // set response code - 200 OK
@@ -65,7 +64,6 @@ else{
     // tell the user children does not exist
     echo json_encode(array(
         "error" => FALSE, 
-        "count" => $num,
         "message" => "Children does not exist."
     ));
 }
