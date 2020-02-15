@@ -12,32 +12,6 @@
     <?php require './view/global/navbar.php' ?>
           
     <br>
-
-    <div class="container center">
-
-    <!-- nama anak -->
-    <h3 class="center-align" id="nama_anak">Andi</h3>
-
-    <br>
-
-    <div class="container center-align">
-    <!-- photo profile anak -->
-    <div class="row">
-      <div class="col s3 m4 l5"></div>
-      <div class="col s6 m4 l2">
-      <!-- img -->
-        <img style="border: 1px solid black;" src="../../img/profile_img.png" alt="" class="circle responsive-img"/>
-      </div>
-      <div class="col s3 m4 l5"></div>
-    </div>
-    <br>
-      <!-- nama kelas -->
-      <!-- comment: biasakan buat menggunakan css untuk letter spacingnya -->
-    <span id="nama_kelas"> <h4 style="font-weight: bold;">"Dekapolis"</h4> </span>
-
-
-    </div>
-
         
 <div class="container">
   <div class="row">
