@@ -5,7 +5,6 @@ $(document).ready(function() {
         closeOnClick: true
       });
     $('.dropdown-trigger').dropdown();
-    $('.datepicker').datepicker();
 
     // ====================================
     // validation
@@ -13,7 +12,6 @@ $(document).ready(function() {
 
 
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
-
     $.ajax({
         url: "http://localhost/immanuel-app/api/user/validate.php",
         type : "POST",
@@ -21,6 +19,7 @@ $(document).ready(function() {
         data : jwt,
         success : function(result) {          
             $('input[name=parent_id]').val(result.data.id);
+            
         },
         error: function(xhr, resp, text){
             var url= "login.php"; 

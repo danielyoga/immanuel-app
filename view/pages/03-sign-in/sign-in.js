@@ -23,7 +23,13 @@ $(document).ready(function() {
                 // store jwt to cookie
                 setCookie("jwt", result.jwt, 1);
 
-                window.location ="home.php"
+                if(result.type == "parent"){
+                    window.location ="home.php";
+                }
+                if(result.type == "teacher"){
+                    window.location ="admin/home.php";
+                }
+                
             },
             error: function(xhr, resp, text){
                 M.toast({html: 'Wrong phone number or password.'});

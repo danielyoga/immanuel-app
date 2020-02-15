@@ -18,7 +18,7 @@ $(document).ready(function() {
         contentType : 'application/json',
         data : jwt,
         success : function(result) {          
-            $("#container-parent").html(result.data.title + " " +result.data.name);
+            $("#container-parent").html(result.data.title + " " +result.data.name.split(" ")[0]);
 
 
                 // ====================================
@@ -35,13 +35,6 @@ $(document).ready(function() {
                         
                         var children = result.records;
                         children.forEach(item => {
-
-                            
-                            console.log(item.id);
-
-                            // var image = new Image();
-                            // image.src = item.photo;
-                            // document.getElementById().appendChild(image);
 
                             card += `
                             

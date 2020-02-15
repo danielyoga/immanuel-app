@@ -45,7 +45,8 @@ if($phone_number_exists && password_verify($data->password, $user->password)){
            "id" => $user->id,
            "title" => $user->title,
            "name" => $user->name,
-           "phone_number" => $user->phone_number
+           "phone_number" => $user->phone_number,
+           "type" => $user->type
        )
     );
  
@@ -58,6 +59,7 @@ if($phone_number_exists && password_verify($data->password, $user->password)){
             array(
                 "error" => false,
                 "message" => "Successful login.",
+                "type" => $user->type,
                 "jwt" => $jwt
             )
         );

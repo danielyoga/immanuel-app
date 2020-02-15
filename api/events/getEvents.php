@@ -28,6 +28,7 @@ if($num>0){
 
     // event array
     $event_arr=array("error" => FALSE);
+    $event_arr["records"]=array();
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -42,7 +43,7 @@ if($num>0){
             "poster" => $poster
         );
 
-        array_push($event_arr, $event_item);
+        array_push($event_arr["records"], $event_item);
     }
  
     // set response code - 200 OK

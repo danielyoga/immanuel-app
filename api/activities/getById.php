@@ -44,7 +44,7 @@ if($num>0){
             "title" => $title,
             "reference" => $reference,
             "summary" => $summary,
-            "presenter_id" => $presenter_id
+            "presenter" => $name
         );
 
         array_push($activity_arr, $activity_item);

@@ -9,28 +9,28 @@ header('Content-Type: application/json');
  
 // include database and object files
 include_once '../config/database.php';
-include_once '../objects/activities.php';
+include_once '../objects/medias.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
-// prepare activity object
-$activity = new Activities($db);
+// prepare media object
+$media = new Medias($db);
  
 // set ID property of record to read
-$activity->child_id = isset($_GET['id']) ? $_GET['id'] : die();
+$media->activity_id = isset($_GET['id']) ? $_GET['id'] : die();
  
-// read the details of activity to be edited
-$stmt = $activity->getByChildren();
+// read the details of media to be edited
+$stmt = $media->getAllByActivity();
 $num = $stmt->rowCount();
  
 // check if more than 0 record found
 if($num>0){
 
-    // activity array
-    $activity_arr=array("error" => FALSE, "count" => $num);
-    $activity_arr["records"]=array();
+    // media array
+    $media_arr=array("error" => FALSE, "count" => $num);
+    $media_arr["records"]=array();
     
     // create array
     while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){
@@ -39,32 +39,29 @@ if($num>0){
         // just $name only
         extract($row);
  
-        $activity_item=array(
-            "id" => $activity_id,
-            "date" => $date,
-            "title" => $title,
-            "reference" => $reference,
-            "summary" => $summary,
-            "presenter_id" => $presenter_id
+        $media_item=array(
+            "id" => $id,
+            "activity_id" => $activity_id,
+            "photo" => $photo
         );
 
-        array_push($activity_arr["records"], $activity_item);
+        array_push($media_arr["records"], $media_item);
     }
  
     // set response code - 200 OK
     http_response_code(200);
  
     // make it json format
-    echo json_encode($activity_arr);
+    echo json_encode($media_arr);
 }
 else{
     // set response code - 404 Not found
     http_response_code(404);
  
-    // tell the user activity does not exist
+    // tell the user media does not exist
     echo json_encode(array(
         "error" => FALSE, 
-        "message" => "activity does not exist."
+        "message" => "media does not exist."
     ));
 }
 

@@ -1,6 +1,8 @@
 <script>
 function logout(){
     unSetCookie("jwt");
+    unSetCookie("immanuel_activity");
+    unSetCookie("immanuel_child");
     var url= "login.php"; 
     window.location = url; 
 }
@@ -18,13 +20,13 @@ function home(){
         <div class="nav-wrapper" style="background-color: #001D39;">
             
             <!-- Home Button Trigger -->
-            <a href="javascript:home();" class="sidenav-trigger"><i class="material-icons">home</i></a>
+            <a href="javascript:window.location=document.referrer;" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
 
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
             <ul class="left hide-on-med-and-down">
-                <li><a href="javascript:home();"><i class="material-icons">home</i></a></li>
+                <li><a href="javascript:window.location=document.referrer;"><i class="material-icons">arrow_back</i></a></li>
             </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="javascript:logout();">Log Out</a></li>

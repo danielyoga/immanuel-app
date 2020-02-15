@@ -30,7 +30,9 @@ class Activities{
     function getById(){
     
         $query = "SELECT *
-                    FROM " . $this->table_name .
+                    FROM " . $this->table_name . " activity " .
+                " LEFT JOIN teachers teacher
+                    ON activity.presenter_id = teacher.teacher_id " .
                 " WHERE 
                     activity_id = ?";
     
@@ -55,7 +57,8 @@ class Activities{
                     ON activity.activity_id = attendance.activity_id " .
                 " WHERE 
                     attendance.child_id = ? " .
-                " ORDER BY activity.date DESC";
+                " ORDER BY activity.date DESC "; 
+                // " LIMIT 8";
     
         // prepare the query
         $stmt = $this->conn->prepare( $query );

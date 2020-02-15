@@ -48,15 +48,15 @@
 
             <p>
               <label>
-                <input class="with-gap" name="title" type="radio" value="Mr."required/>
-                <span>Mr.</span>
+                <input class="with-gap" name="title" type="radio" value="Bpk."required/>
+                <span>Bpk.</span>
               </label>
             </p>
 
             <p>
               <label>
-                <input class="with-gap" name="title" type="radio" value="Mrs."required/>
-                <span>Mrs.</span>
+                <input class="with-gap" name="title" type="radio" value="Ibu"required/>
+                <span>Ib.</span>
               </label>
             </p>
           </div>

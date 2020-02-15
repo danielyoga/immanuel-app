@@ -12,6 +12,7 @@ class User{
     public $title;
     public $phone_number;
     public $password;
+    public $type;
  
     // constructor
     public function __construct($db){
@@ -90,9 +91,50 @@ class User{
             $this->name     = $row['name'];
             $this->title    = $row['title'];
             $this->password = $row['password'];
+            $this->type     = "parent";
     
             // return true because phone_number exists in the database
             return true;
+
+        }
+
+        else{
+                // query to check if phone_number exists
+                $query = "SELECT *
+                FROM teachers 
+                WHERE phone_number = ?
+                LIMIT 0,1";
+
+                // prepare the query
+                $stmt = $this->conn->prepare( $query );
+
+                // sanitize
+                $this->phone_number=htmlspecialchars(strip_tags($this->phone_number));
+
+                // bind given phone_number value
+                $stmt->bindParam(1, $this->phone_number);
+
+                // execute the query
+                $stmt->execute();
+
+                // get number of rows
+                $num = $stmt->rowCount();
+
+                // if phone_number exists, assign values to object properties for easy access and use for php sessions
+                if($num>0){
+
+                    // get record details / values
+                    $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                    // assign values to object properties
+                    $this->id       = $row['teacher_id'];
+                    $this->name     = $row['name'];
+                    $this->password = $row['password'];
+                    $this->type     = "teacher";
+
+                    // return true because phone_number exists in the database
+                    return true;
+                }
         }
     
         // return false if phone_number does not exist in the database
