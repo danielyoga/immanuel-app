@@ -15,8 +15,7 @@
 
     <div class="container center">
 
-<<<<<<< HEAD
-      <!-- nama anak -->
+    <!-- nama anak -->
     <h3 class="center-align" id="nama_anak">Andi</h3>
 
     <br>
@@ -42,8 +41,6 @@
         
 <div class="container">
   <div class="row">
-=======
->>>>>>> api-branch
 
         <!-- photo profile anak -->
         <div class="row">
