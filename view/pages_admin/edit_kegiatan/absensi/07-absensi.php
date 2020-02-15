@@ -27,9 +27,13 @@
   <body>
     
   <!-- NAVBAR -->
-  <?php require '../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../global/admin/topbar_admin_pembina.php' ?>
+  <?php require '../../../global/admin/navbar_admin_pembina.php' ?>
+  <?php require '../../../global/admin/topbar_admin_pembina.php' ?>
 
+  <!-- button back to kegiatan detail -->
+  <div class="container center-align">
+  <a href="../../05-detail-kegiatan/05-detail-kegiatan.php" class="waves-effect waves-light btn">Back to detail kegiatan</a>
+  </div>
 
       <!-- table -->
       <table class="centered striped">
@@ -41,6 +45,52 @@
         </thead>
 
         <tbody>
+
+    <!-- row table -->
+          <tr>
+            <td id="nama_anak">Alvin</td>
+            <td id="kehadiran">
+              <!-- radio button kehadiran -->
+            <form action="#">
+
+              <p>
+                <label>
+                <input name="kehadiran" type="radio" value="hadir"/>
+                <span>Hadir</span>
+                </label>
+                <label>
+                <input name="kehadiran" type="radio" value="tidak_hadir"/>
+                <span>Tidak Hadir</span>
+                </label>
+              </p>
+              
+              </form>
+            </td>
+            
+          </tr>
+
+          <tr>
+            <td id="nama_anak">Alvin</td>
+            <td id="kehadiran">
+              <!-- radio button kehadiran -->
+            <form action="#">
+
+              <p>
+                <label>
+                <input name="kehadiran" type="radio" value="hadir"/>
+                <span>Hadir</span>
+                </label>
+                <label>
+                <input name="kehadiran" type="radio" value="tidak_hadir"/>
+                <span>Tidak Hadir</span>
+                </label>
+              </p>
+              
+              </form>
+            </td>
+            
+          </tr>
+
           <tr>
             <td id="nama_anak">Alvin</td>
             <td id="kehadiran">

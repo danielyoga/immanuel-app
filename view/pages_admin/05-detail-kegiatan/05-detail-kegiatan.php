@@ -1,3 +1,7 @@
+<!-- NAVBAR -->
+<?php require '../../global/admin/navbar_admin.php' ?>
+<?php require '../../global/admin/topbar_admin.php' ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,11 +29,6 @@
   </head>
 
   <body>
-    
-  <!-- NAVBAR -->
-  <?php require '../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../global/admin/topbar_admin_pembina.php' ?>
-
 
   <div class="container">
 
@@ -53,14 +52,14 @@
     
   </div> <!-- end-->
 
-  <!-- buttons -->
+  <!-- buttons edit kegiatan-->
   <div class="container center-align">
     <div class="row">
       <div class="col s4">
-        <a href="../07-absensi/07-absensi.php" class="waves-effect waves-light btn indigo darken-4">Absensi</a>
+        <a href="../edit_kegiatan/absensi/07-absensi.php" class="waves-effect waves-light btn indigo darken-4">Absensi</a>
       </div>
       <div class="col s4">
-        <a href="../08-penilaian/08-penilaian.php" class="waves-effect waves-light btn indigo darken-2">Penilaian</a>
+        <a href="../edit_kegiatan/penilaian/08-penilaian.php" class="waves-effect waves-light btn indigo darken-2">Penilaian</a>
       </div>
       <div class="col s4">
         <a href="#" class="waves-effect waves-light btn indigo lighten-2">Upload</a>

@@ -1,3 +1,7 @@
+      <!-- NAVBAR -->
+<?php require '../../global/admin/navbar_admin.php' ?>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -24,9 +28,6 @@
   </head>
 
   <body>
-
-      <!-- NAVBAR -->
-      <?php require '../../global/admin/navbar_home_admin_pembina.php' ?>
 
     <!-- card kelas -->
       <a href="../04-home-kelas/04-home-kelas.php">
