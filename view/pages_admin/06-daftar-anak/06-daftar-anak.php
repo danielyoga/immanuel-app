@@ -1,3 +1,7 @@
+  <!-- NAVBAR -->
+  <?php require '../../global/admin/navbar_admin.php' ?>
+  <?php require '../../global/admin/topbar_admin.php' ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,12 +30,10 @@
 
   <body>
     
-  <!-- NAVBAR -->
-  <?php require '../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../global/admin/topbar_admin_pembina.php' ?>
 
 
-      <table class="centered striped">
+
+      <table class="centered striped responsive-table">
         <thead>
           <tr>
               <th>Nama Anak</th>
@@ -44,7 +46,23 @@
           <tr>
             <td id="nama_anak">Alvin</td>
             <td id="nama_orangtua">Bapak Eclair</td>
-            <td>08585842392
+            <td id="nomor_telepon">08585842392</td>
+            <td>
+              <input type="text" id="test" value="123" readonly class="test">
+
+              <style>
+              .test input[type=text]:focus {
+              border-bottom: 0px solid #ffff;
+              box-shadow: 0 0 0 0 #000;
+            }
+
+              .test input:focus {
+              border-bottom: 1px solid red !important;
+              box-shadow: 0 1px 0 0 red !important
+            }
+            </style>
+            </td>
+            <td>
               <button id="copybtn" class="btn-small" onclick="copybtn()">Copy text</button>
             </td>
           </tr>
@@ -55,7 +73,7 @@
   <script>
       function copybtn() {
     /* Get the text field */
-    var copyText = document.getElementById("myInput");
+    var copyText = document.getElementById("test");
 
     /* Select the text field */
     copyText.select();

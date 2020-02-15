@@ -40,7 +40,7 @@
         <div class="row">
           <div class="col s3"></div>
           <div class="input-field col s6" id="username">
-            <input id="register-email" type="text" class="validate" required>
+            <input id="register-date" type="text" class="validate" required>
             <label class="active" for="register-email">tanggal</label>
           </div>
           <div class="col s3"></div>
@@ -52,7 +52,7 @@
         <div class="row">
           <div class="col s3"></div>
           <div class="input-field col s6" id="username">
-            <input id="register-username" type="text" class="validate" required>
+            <input id="register-judul-kotbah" type="text" class="validate" required>
             <label class="active" for="register-username">Judul Kotbah</label>
           </div>
           <div class="col s3"></div>
@@ -64,7 +64,7 @@
       <div class="row">
           <div class="col s3"></div>
           <div class="input-field col s6" id="username">
-            <input id="register-username" type="text" class="validate" required>
+            <input id="register-ayat-pokok-kotbah" type="text" class="validate" required>
             <label class="active" for="register-username">Ayat Pokok Kotbah</label>
           </div>
           <div class="col s3"></div>
@@ -74,7 +74,17 @@
       <div class="row">
           <div class="col s3"></div>
           <div class="input-field col s6" id="username">
-            <input id="register-username" type="text" class="validate" required>
+            <input id="register-rangkuman-kotbah" type="text" class="validate" required>
+            <label class="active" for="register-username">Rangkuman Kotbah</label>
+          </div>
+          <div class="col s3"></div>
+        </div>
+      
+      <!-- Guru yang menyampaikan Firman Tuhan -->
+      <div class="row">
+          <div class="col s3"></div>
+          <div class="input-field col s6" id="username">
+            <input id="register-guru-yang-menyampaikan" type="text" class="validate" required>
             <label class="active" for="register-username">Rangkuman Kotbah</label>
           </div>
           <div class="col s3"></div>

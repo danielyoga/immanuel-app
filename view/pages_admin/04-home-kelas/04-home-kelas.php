@@ -1,3 +1,7 @@
+  <!-- NAVBAR -->
+  <?php require '../../global/admin/navbar_admin.php' ?>
+  <?php require '../../global/admin/topbar_admin.php' ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,10 +29,6 @@
   </head>
 
   <body>
-    
-  <!-- NAVBAR -->
-  <?php require '../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../global/admin/topbar_admin_pembina.php' ?>
 
 <div class="container">
 
@@ -62,6 +62,7 @@
                 <h5 class="left btn black white-text" style="border-radius:25px;">
                     Matius 1 : 18 - 25
                 </h5>
+                <br>
                 <br>
               </span>
 
