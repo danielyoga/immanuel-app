@@ -8,47 +8,44 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
  
 // files needed to connect to database
 include_once '../config/database.php';
-include_once '../objects/user.php';
+include_once '../objects/pray.php';
  
 // get database connection
 $database = new Database();
 $db = $database->getConnection();
  
 // instantiate product object
-$user = new User($db);
+$pray = new Pray($db);
  
 // get posted data
 $data = json_decode(file_get_contents("php://input"));
  
-// set product property values
-$user->title = $data->title;
-$user->name = $data->name;
-$user->phone_number = $data->phone_number;
-$user->password = $data->password;
- 
-// create the user
+// set pray property values
+$pray->prayer = $data->pray;
+$pray->parent_id = $data->parent_id;
+$pray->isRead = 0; // default: false
+
+// create the pray
 if(
-    !empty($user->title) &&
-    !empty($user->name) &&
-    !empty($user->phone_number) &&
-    !empty($user->password) &&
-    $user->create()
+    !empty($pray->prayer) &&
+    !empty($pray->parent_id) &&
+    $pray->create()
 ){
  
     // set response code
     http_response_code(200);
  
-    // display message: user was created
-    echo json_encode(array( "error" => false, "message" => "User was created."));
+    // display message: pray was created
+    echo json_encode(array( "error" => false, "message" => "pray was created."));
 }
  
-// message if unable to create user
+// message if unable to create pray
 else{
  
     // set response code
     http_response_code(400);
  
-    // display message: unable to create user
-    echo json_encode(array( "error" => true, "message" => "Unable to create user."));
+    // display message: unable to create pray
+    echo json_encode(array( "error" => true, "message" => "Unable to create pray."));
 }
 ?>
