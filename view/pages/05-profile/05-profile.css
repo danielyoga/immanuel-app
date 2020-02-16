@@ -15,6 +15,17 @@
   color: #2699FB;
 }
 
-#nama_kelas {
-  letter-spacing: 10px;
+
+#nama_kelas{
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 1pt;
+}
+
+.btn{
+  width:100%;
+}
+
+.card{
+  margin-right: 2%;
 }

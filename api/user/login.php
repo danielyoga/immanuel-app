@@ -22,8 +22,8 @@ $user = new User($db);
 $data = json_decode(file_get_contents("php://input"));
  
 // set product property values
-$user->email = $data->email;
-$email_exists = $user->emailExists();
+$user->phone_number = $data->phone_number;
+$phone_number_exists = $user->phone_numberExists();
  
 // generate json web token
 include_once '../config/core.php';
@@ -33,8 +33,8 @@ include_once '../libs/php-jwt-master/src/SignatureInvalidException.php';
 include_once '../libs/php-jwt-master/src/JWT.php';
 use \Firebase\JWT\JWT;
  
-// check if email exists and if password is correct
-if($email_exists && password_verify($data->password, $user->password)){
+// check if phone_number exists and if password is correct
+if($phone_number_exists && password_verify($data->password, $user->password)){
  
     $token = array(
        "iss" => $iss,
@@ -43,8 +43,10 @@ if($email_exists && password_verify($data->password, $user->password)){
        "nbf" => $nbf,
        "data" => array(
            "id" => $user->id,
+           "title" => $user->title,
            "name" => $user->name,
-           "email" => $user->email
+           "phone_number" => $user->phone_number,
+           "type" => $user->type
        )
     );
  
@@ -57,6 +59,7 @@ if($email_exists && password_verify($data->password, $user->password)){
             array(
                 "error" => false,
                 "message" => "Successful login.",
+                "type" => $user->type,
                 "jwt" => $jwt
             )
         );

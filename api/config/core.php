@@ -6,9 +6,9 @@ error_reporting(E_ALL);
 date_default_timezone_set('Asia/Jakarta');
  
 // variables used for jwt
-$key = "example_key";
-$iss = "http://example.org";
-$aud = "http://example.com";
+$key = "827ccb0eea8a706c4c34a16891f84e7b";
+$iss = "immanuel-app.com";
+$aud = "immanuel-app.com";
 $iat = 1356999524;
 $nbf = 1357000000;
 

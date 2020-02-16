@@ -14,26 +14,24 @@ function logout(){
 
         <nav>
         <div class="nav-wrapper" style="background-color: #001D39;">
+            
             <!-- Home Button Trigger -->
             <a href="home.php" class="sidenav-trigger"><i class="material-icons">home</i></a>
+
+            <a href="#" class="brand-logo center" id="container-parent">Logo</a>
 
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
-            <!-- Home Button Trigger -->
             <ul class="left hide-on-med-and-down">
-            <li><a href="home.php"><i class="material-icons">home</i></a></li>
+                <li><a href="home.php"><i class="material-icons">home</i></a></li>
             </ul>
-
+            
             <ul class="right hide-on-med-and-down">
-                <li><a id="link-profile-m" href="profile.php">Profile</a></li>
-                <li><a id="link-kegiatan-m" href="kegiatan.php">Kegiatan</a></li>
-                <!-- <li><a href="berita.php">Berita</a></li>
+                <li><a href="berita.php">Berita</a></li>
                 <li><a href="saran-kritik.php">Saran & Kritik</a></li>
-                <li><a href="pray.php">Pray</a></li> -->
-
-
-            <li><a href="javascript:logout();">Log Out</a></li>
+                <li><a href="pray.php">Pray</a></li>
+                <li><a href="javascript:logout();">Log Out</a></li>
             </ul>
 
         </div>
@@ -53,13 +51,10 @@ function logout(){
         <!-- TODO: clean code -->
         <!-- <img src="../../img/logo.png" style="width: 80%;margin: 0;"> -->
     </a>
-
-    <!-- sidenav content -->
-    <li><a id="link-profile" href="profile.php">Profile</a></li>
-    <li><a id="link-kegiatan" href="kegiatan.php">Kegiatan</a></li>
-    <!-- <li><a href="berita.php">Berita</a></li>
+    
+    <li><a href="berita.php">Berita</a></li>
     <li><a href="saran-kritik.php">Saran & Kritik</a></li>
-    <li><a href="pray.php">Pray</a></li> -->
+    <li><a href="pray.php">Pray</a></li>
     <li><a href="javascript:logout();"><i class="material-icons" style="color: white;">close</i>Log Out</a></li>
     
 </ul>
