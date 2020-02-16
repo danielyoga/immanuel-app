@@ -27,67 +27,86 @@
   <body>
     
   <!-- NAVBAR -->
-  <?php require '../../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../../global/admin/topbar_admin_pembina.php' ?>
+  <?php require '../../../global/admin/navbar_admin.php' ?>
+  <?php require '../../../global/admin/topbar_admin.php' ?>
 
   <!-- button back to kegiatan detail -->
   <div class="container center-align">
   <a href="../../05-detail-kegiatan/05-detail-kegiatan.php" class="waves-effect waves-light btn">Back to detail kegiatan</a>
 
-
+  <form action="#" required>
     <table class="responsive-table">
       <thead>
         <tr>
           <th data-field="nama_anak" style="margin-bottom: 20px;">Name</th>
-          <th data-field="alkitab">Alkitab</th>
-          <th data-field="book-of-truth">Book of Truth</th>
-          <th data-field="pelayanan">pelayanan</th>
+          <th data-field="alkitab" colspan="2">Alkitab</th>
+          <th data-field="book-of-truth" colspan="2">Book of Truth</th>
+          <th data-field="pelayanan" colspan="2">pelayanan</th>
         </tr>
       </thead>
       <tbody>
 
+        <!-- nama = alvin -->
         <tr>
           <td>Alvin</td>
-          <td>   <form action="#" required>
+          <td>   
             <!-- radio button alkitab -->
-            <p>
+            <a href="#" class="waves-effect waves-light btn">Button</a>
+            
               <label>
                 <input name="group1" type="radio" value="yes" />
                 <span>membawa</span>
               </label>
-            </p>
+          </td>
 
-            <p>
+          <td>
               <label>
                 <input name="group1" type="radio" value="no" />
                 <span>tidak membawa</span>
+              </label> 
+          </td>
+
+        <td>  
+            <!-- radio button book of truth -->
+            
+              <label>
+                <input name="group1" type="radio" value="yes" />
+                <span>membawa</span>
               </label>
-            </p>
-          </form>
+
         </td>
 
-        <td>   <form action="#" required>
-            <!-- radio button book of truth -->
-            <p>
-              <label>
-                <input name="group1" type="radio" value="yes" />
-                <span>membawa</span>
-              </label>
-            </p>
-
-            <p>
+          <td>
               <label>
                 <input name="group1" type="radio" value="no" />
                 <span>tidak membawa</span>
+              </label>    
+          </td>
+
+        <td>  
+            <!-- radio button book of truth -->
+            
+              <label>
+                <input name="group1" type="radio" value="yes" />
+                <span>ya</span>
               </label>
-            </p>
-          </form>
+        </td>
+
+          <td>
+           
+              <label>
+                <input name="group1" type="radio" value="no" />
+                <span>tidak</span>
+              </label>
+         
         </td>
 
         </tr>
 
+
       </tbody>
     </table>
+    </form>
 
     </div> <!-- container div end-->
             

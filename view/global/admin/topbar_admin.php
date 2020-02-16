@@ -20,12 +20,12 @@
             
             <!-- pilihan kelas -->
             <select>
-              <option value="yes">kelas 1</option>
-              <option value="no">kelas 2</option>
+              <option value="yes">Januari</option>
+              <option value="no">Februari</option>
               <option value="dont">I Don't Know</option>
             </select>
             <!-- placeholder -->
-            <label>Pilih kelas</label>
+            <label>Bulan</label>
           </div>
           <div class="col s3"></div>
         </div> <!--end div row-->

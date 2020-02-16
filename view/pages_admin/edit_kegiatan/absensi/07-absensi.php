@@ -27,8 +27,8 @@
   <body>
     
   <!-- NAVBAR -->
-  <?php require '../../../global/admin/navbar_admin_pembina.php' ?>
-  <?php require '../../../global/admin/topbar_admin_pembina.php' ?>
+  <?php require '../../../global/admin/navbar_admin.php' ?>
+  <?php require '../../../global/admin/topbar_admin.php' ?>
 
   <!-- button back to kegiatan detail -->
   <div class="container center-align">
