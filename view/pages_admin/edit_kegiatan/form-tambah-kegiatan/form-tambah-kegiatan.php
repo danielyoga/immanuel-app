@@ -85,7 +85,7 @@
           <div class="col s3"></div>
           <div class="input-field col s6" id="username">
             <input id="register-guru-yang-menyampaikan" type="text" class="validate" required>
-            <label class="active" for="register-username">Rangkuman Kotbah</label>
+            <label class="active" for="register-username">Yang menyampaikan Kotbah</label>
           </div>
           <div class="col s3"></div>
         </div>

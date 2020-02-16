@@ -1,6 +1,6 @@
 <!-- NAVBAR -->
 <?php require '../../global/admin/navbar_admin.php' ?>
-<?php require '../../global/admin/topbar_admin.php' ?>
+<?php require '../../global/admin/topbar_detail_kegiatan.php' ?>
 
 <!DOCTYPE html>
 <html>
@@ -46,25 +46,14 @@
       <p class="left col 11 flow-text">Kelahiran Tuhan Yesus</p>
     </div>
 
+    
+
     <h6 href="#" class="waves-effect waves-light btn black white-text">Matius 1:18-25</h6>
     <p class="flow-text">Oleh : Tante Hana</p>
     <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     
   </div> <!-- end-->
 
-  <!-- buttons edit kegiatan-->
-  <div class="container center-align">
-    <div class="row">
-      <div class="col s4">
-        <a href="../edit_kegiatan/absensi/07-absensi.php" class="waves-effect waves-light btn indigo darken-4">Absensi</a>
-      </div>
-      <div class="col s4">
-        <a href="../edit_kegiatan/penilaian/08-penilaian.php" class="waves-effect waves-light btn indigo darken-2">Penilaian</a>
-      </div>
-      <div class="col s4">
-        <a href="#" class="waves-effect waves-light btn indigo lighten-2">Upload</a>
-      </div>
-    </div>
-  </div>
+  
   </body>
 </html>
