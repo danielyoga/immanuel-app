@@ -17,10 +17,9 @@
 
             <ul class="right hide-on-med-and-down">
                 <li><a href="../04-home-kelas/04-home-kelas.php">Dashboard Kelas</a></li>
-                <li><a href="#alasanketidakhadiran">Alasan Ketidakhadiran</a></li>
-                <li><a href="Sarankritik">Saran & Kritik</a></li>
-                <li><a href="#Pray">Pray</a></li>
-                
+                <li><a href="../07-saran-dan-kritik">Saran & Kritik</a></li>
+                <li><a href="../08-alasan-ketidakhadiran">Alasan Ketidakhadiran</a></li>
+                <li><a href="../09-bantuan-doa">Pray</a></li>
                 <!-- log out , cara 1 hapus cookie -->
                 <li><a href="javascript:unSetCookie('jwt')">Log Out</a></li>
             </ul>
@@ -37,9 +36,9 @@
 
     <!-- sidenav content -->
     <li><a href="../04-home-kelas/04-home-kelas.php">Dashboard Kelas</a></li>
-    <li><a href="#alasanketidakhadiran">Alasan Ketidakhadiran</a></li>
-    <li><a href="Sarankritik">Saran & Kritik</a></li>
-    <li><a href="#Pray">Pray</a></li>
+    <li><a href="../07-saran-dan-kritik">Saran & Kritik</a></li>
+    <li><a href="../08-alasan-ketidakhadiran">Alasan Ketidakhadiran</a></li>
+    <li><a href="../09-bantuan-doa">Pray</a></li>
     <li><a href="javascript:unSetCookie('jwt')"><i class="material-icons" style="color: black;">close</i>Log Out</a></li>
     
 </ul>

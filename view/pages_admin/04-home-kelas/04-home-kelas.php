@@ -87,7 +87,7 @@
   <!-- float button + -->
   <!-- tambah kegiatan -->
   <div class="fixed-action-btn">
-      <a class="btn-floating btn-large" href="">
+    <a class="btn-floating btn-large" href="../edit_kegiatan/form-tambah-kegiatan/form-tambah-kegiatan.php">
         <i class="large material-icons light-blue darken-4">add</i>
       </a>
     </div>

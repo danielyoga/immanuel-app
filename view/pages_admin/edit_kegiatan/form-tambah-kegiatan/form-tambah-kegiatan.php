@@ -97,17 +97,27 @@
           <div class="col s3"></div>
           
           <!-- button -->
-            <button class="btn col s6 waves-effect waves-light" type="submit" name="action">Submit
+            <button class="btn col s6 waves-effect waves-light light-blue darken-4" type="submit" name="action">Submit
               <i class="material-icons right">send</i>
             </button>
-
 
           <div class="col s3"></div>
         </div>
       </div>
 
-
     </form>
+
+    <div class="container">
+        <div class="row">
+          <div class="col s3"></div>
+          
+          <!-- button -->
+          <a href="../../04-home-kelas/04-home-kelas.php" class="btn col s6 waves-effect waves-light light-blue darken-1" type="submit" name="action">
+          <i class="material-icons right"> cancel </i> cancel </a>
+
+          <div class="col s3"></div>
+        </div>
+      </div>
 
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
