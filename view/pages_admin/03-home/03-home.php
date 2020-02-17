@@ -1,5 +1,5 @@
       <!-- NAVBAR -->
-<?php require '../../global/admin/navbar_admin.php' ?>
+<?php require '../../global/admin/navbar_admin_home.php' ?>
 
 
 <!DOCTYPE html>
@@ -13,8 +13,6 @@
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <link rel="stylesheet" href="04-home.css">
 
     <!-- Compiled minified Jquery -->
     <script
@@ -56,7 +54,7 @@
     <!-- Compiled and minified JavaScript -->
     <!-- JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
+    <script type=text/javascript>
       $(document).ready(function(){
         // letakkan initialize object di dalam document ready
         // jika tidak maka javascript tidak akan menginitialize object tersebut,
