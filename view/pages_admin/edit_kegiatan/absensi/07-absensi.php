@@ -18,20 +18,20 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>belajar materialize</title>
+    <title>Immanuel Kids - Absensi</title>
 
   </head>
 
   <body>
     
   <!-- NAVBAR -->
-  <?php require '../../../global/admin/navbar_admin.php' ?>
-  <?php require '../../../global/admin/topbar_admin.php' ?>
+  <?php require '../view/global/admin/navbar_detail_class.php' ?>
 
-  <!-- button back to kegiatan detail -->
-  <div class="container center-align">
-  <a href="../../05-detail-kegiatan/05-detail-kegiatan.php" class="waves-effect waves-light btn">Back to detail kegiatan</a>
-  </div>
+      <br>
+
+      <h1 class="center">Absensi</h1>
+
+      <br>
 
       <!-- table -->
       <table class="centered striped">
@@ -112,25 +112,6 @@
           </tr>
         </tbody>
       </table>
-
-
-            
-  <script>
-      function copybtn() {
-    /* Get the text field */
-    var copyText = document.getElementById("myInput");
-
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
-
-    /* Alert the copied text */
-    alert("Copied the text: " + copyText.value);
-  }
-  </script>
 
 </body>
 </html>

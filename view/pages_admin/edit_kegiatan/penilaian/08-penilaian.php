@@ -25,14 +25,15 @@
   <body>
     
   <!-- NAVBAR -->
-  <?php require '../../../global/admin/navbar_admin.php' ?>
-  <?php require '../../../global/admin/topbar_admin.php' ?>
+  <?php require '../view/global/admin/navbar_detail_class.php' ?>
 
-  <!-- button back to kegiatan detail -->
+  <br>
+  <h1 class="center">Penilaian</h1>
+  <br><br>
+
   <div class="container center-align">
-  <a href="../../05-detail-kegiatan/05-detail-kegiatan.php" class="waves-effect waves-light btn">Back to detail kegiatan</a>
-
-  <form action="#" required>
+  
+  <form action="#">
     <table class="responsive-table">
       <thead>
         <tr>
@@ -108,22 +109,5 @@
 
     </div> <!-- container div end-->
             
-  <script>
-      function copybtn() {
-    /* Get the text field */
-    var copyText = document.getElementById("myInput");
-
-    /* Select the text field */
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-
-    /* Copy the text inside the text field */
-    document.execCommand("copy");
-
-    /* Alert the copied text */
-    alert("Copied the text: " + copyText.value);
-  }
-  </script>
-
 </body>
 </html>

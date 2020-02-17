@@ -53,8 +53,8 @@
 <script>
     function logout(){
         unSetCookie("jwt");
-        unSetCookie("immanuel_activity");
-        unSetCookie("immanuel_child");
+        unSetCookie("immanuel_admin_activity");
+        unSetCookie("immanuel_admin_class");
         var url= "../login.php"; 
         window.location = url; 
     }

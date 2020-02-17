@@ -1,63 +1,82 @@
+<!-- GLOBAL HEAD -->
+<?php require '../view/global/head-native.php' ?>
+
+<!-- get API with PHP -->
 <?php
-    $con = mysqli_connect('localhost','root','','immanuel_app');
 
-    if(!$con){
-        echo "Hoe" ;
-    }
+$curl = curl_init();
 
-    $query = " SELECT * FROM `sarankritik,bantuandoa,alasanketidakhadiran`" ;
-    $execute = mysqli_query($con,$query) ;
-    $saran_dan_kritik = mysqli_num_rows($execute) ;
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://localhost/immanuel-app/api/reviews/getAll.php",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "cache-control: no-cache"
+  ),
+));
+
+$response = curl_exec($curl);
+$err = curl_error($curl);
+
+curl_close($curl);
+
+$response = json_decode($response, true); //because of true, it's in an array
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/datatables.min.css" type="text/css">
+
+<title>Immanuel Kids - Saran dan Kritik</title>
+<link rel="stylesheet" href="../view/pages_admin/07-saran-dan-kritik/css/datatables.min.css" type="text/css">
 </head>
 <body>
+<a href="javascript:window.location=history.back();">Back to home</a>
 
-
+<br><br>
+<h1 style="text-align:center;">Kritik dan Saran</h1>
+<br><br>
     <div class="container">
-    <table id="saran_dan_kritik" class="display">
+    <table id="saran_dan_kritik" class="display" style="text-align:center;">
         <thead>
             <tr>
-                <th>Nama Anak</th>
                 <th>Nama Orang Tua</th>
                 <th>Kritik</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-
-        <?php
-            if($saran_dan_kritik > 0){
-                while($row = mysqli_fetch_array($execute)){
-        ?>
-            <tr>
-                <td> <?php echo $row['nama_anak'] ?> </td>
-                <td> <?php echo $row['nama_orang_tua'] ?> </td>
-                <td> <?php echo $row['saran_dan_kritik'] ?> </td>
-            </tr>
-
             <?php
+                
+                foreach ($response['records'] as $row) {
+                    echo '<tr>';
+                    echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
+                    echo '<td>' . $row['review'] . '</td>';
+
+                    // Button read
+                    if($row['isRead'] != 1){
+                        echo '<td><input type="button" onclick="javascript:markAsRead(`'.$row['id'].'`);" value="Read"></td>';
+                    }
+                    else{
+                        echo '<td></td>';
+                    }
+                    echo '</tr>';
                 }
-            }
-        ?>
+                
+            ?>
         </tbody>
     </table>
     </div> <!-- end container table-->
 
-    <a href="../04-home-kelas/04-home-kelas.php">Back to home</a>
+<script type="text/javascript" src=../view/pages_admin/07-saran-dan-kritik/js/jquery.js></script>
+<script type="text/javascript" src=../view/pages_admin/07-saran-dan-kritik/js/datatables.min.js></script>
 
-<script type="text/javascript" src=js/jquery.js></script>
-<script type="text/javascript" src=js/datatables.min.js></script>
+<script type="text/javascript" src=../view/pages_admin/07-saran-dan-kritik/saran-dan-kritik.js></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#saran_dan_kritik").DataTable();
-    })
+        $("#saran_dan_kritik").DataTable({
+            "order": [[ 2, "desc" ]]
+        });
+    });
 </script>
 </body>
 </html>

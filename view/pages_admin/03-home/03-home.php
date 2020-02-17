@@ -10,7 +10,7 @@
   <!-- NAVBAR -->
   <?php require '../view/global/admin/navbar_admin.php' ?>
 
-    <h1 class="center">List Kelas</h1>
+    <h1 class="center"></h1>
 
   <div id="class-container">
 
@@ -21,7 +21,7 @@
                   <div class="card white">
                     <!-- nama kelas -->
                     <div class="card-content black-text">
-                      <span class="card-title">Nama Kelas</span>
+                      <span class="card-title"></span>
                     </div>
                   </div>
                 </div>
@@ -32,7 +32,7 @@
                 <div class="card white">
                   <!-- nama kelas -->
                   <div class="card-content black-text">
-                    <span class="card-title">Nama Kelas</span>
+                    <span class="card-title"></span>
                   </div>
                 </div>
               </div> <!-- div container end-->

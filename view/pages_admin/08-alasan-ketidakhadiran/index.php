@@ -1,26 +1,16 @@
-<?php
-    $con = mysqli_connect('localhost','root','','immanuel_app');
-
-    if(!$con){
-        echo "Hoe" ;
-    }
-
-    $query = " SELECT * FROM `sarankritik,bantuandoa,alasanketidakhadiran`" ;
-    $execute = mysqli_query($con,$query) ;
-    $saran_dan_kritik = mysqli_num_rows($execute) ;
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/datatables.min.css" type="text/css">
+<!-- GLOBAL HEAD -->
+<?php require '../view/global/head-native.php' ?>
+<title>Immanuel Kids - Alasan Ketidakhadiran</title>
+<link rel="stylesheet" href="../view/pages_admin/08-alasan-ketidakhadiran/css/datatables.min.css" type="text/css">
 </head>
 <body>
+<a href="javascript:window.location=history.back();">Back to home</a>
+
+<br><br>
+<h1 style="text-align:center;">Alasan Ketidakhadiran</h1>
+<br><br>
     <div class="container">
-    <table id="saran_dan_kritik" class="display">
+    <table id="alasan_ketidakhadiran" class="display">
         <thead>
             <tr>
                 <th>Nama Anak</th>
@@ -29,32 +19,20 @@
             </tr>
         </thead>
         <tbody>
-
-        <?php
-            if($saran_dan_kritik > 0){
-                while($row = mysqli_fetch_array($execute)){
-        ?>
             <tr>
-                <td> <?php echo $row['nama_anak'] ?> </td>
-                <td> <?php echo $row['nama_orang_tua'] ?> </td>
-                <td> <?php echo $row['alasan_ketidakhadiran'] ?> </td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
             </tr>
-
-            <?php
-                }
-            }
-        ?>
         </tbody>
     </table>
-    </div> <!-- end container table-->
+</div> <!-- end container table-->
 
-    <a href="../04-home-kelas/04-home-kelas.php">Back to home</a>
-
-<script type="text/javascript" src=js/jquery.js></script>
-<script type="text/javascript" src=js/datatables.min.js></script>
+<script type="text/javascript" src=../view/pages_admin/08-alasan-ketidakhadiran/js/jquery.js></script>
+<script type="text/javascript" src=../view/pages_admin/08-alasan-ketidakhadiran/js/datatables.min.js></script>
 <script type="text/javascript">
     $(document).ready(function(){
-        $("#saran_dan_kritik").DataTable();
+        $("#alasan_ketidakhadiran").DataTable();
     })
 </script>
 </body>

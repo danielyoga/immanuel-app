@@ -7,7 +7,7 @@
       <span class="white-text" style="font-size: 5em;" id="class_name-container"></span>
       <br>
       <br>
-      <a href="../06-daftar-anak/06-daftar-anak.php" class="waves-effect waves-light btn black white-text">Daftar Anak</a>
+      <span id="button_daftar_anak-container"></span>
       <br><br>
 
       <!-- dropdown form kelas -->
@@ -38,9 +38,9 @@
           <div class="col s3"></div>
         </div> <!--end div row-->
       </form>
-
+                <br>
   </div>
-
+<br>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -52,6 +52,8 @@
         var url_string = window.location;
         var url = new URL(url_string);
         var class_id = url.searchParams.get("id");
+
+        $('#button_daftar_anak-container').html('<a href="daftar-anak.php?id='+class_id+'" class="waves-effect waves-light btn black white-text">Daftar Anak</a>');
 
         if(class_id == 0){
           var url= "../login.php"; 
@@ -69,6 +71,8 @@
                 kelas.forEach(item => {
                     if(item.id == class_id){
                         name_class = item.name;
+                        
+                        setCookie("immanuel_admin_class", name_class, 1);
                     } 
                 });
 

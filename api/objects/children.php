@@ -54,6 +54,28 @@ class Children{
         return false;
     }
 
+    // get all children by class
+    function getAllByClass(){
+    
+        $query = "SELECT *
+                    FROM " . $this->table_name . " child " .
+                " LEFT JOIN parents parent
+                    ON child.parent_id = parent.id " .
+                " WHERE 
+                    class_id= ?";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+    
+        // bind parent_id of children to be updated
+        $stmt->bindParam(1, $this->class_id);
+    
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
     // get all children by parent
     function getByParent(){
     

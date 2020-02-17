@@ -47,6 +47,47 @@ class Pray{
     
         return false;
     } 
+
+    // get all reviews from db
+    function getAll(){
+        
+        // query to check if phone_number exists
+        $query = "SELECT *
+                FROM " . $this->table_name . " prayer " .
+                " LEFT JOIN parents parent
+                ON prayer.parent_id = parent.id " .
+                "  ORDER BY isRead ASC";
+
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+
+        // execute the query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    // update review
+    public function update(){
+    
+        // if no posted password, do not update the password
+        $query = "UPDATE " . $this->table_name . "
+                SET
+                    isRead = 1 
+                WHERE prayer_id = :id";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(':id', $this->id);
+   
+        // execute the query
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
+    }
     
 }
 

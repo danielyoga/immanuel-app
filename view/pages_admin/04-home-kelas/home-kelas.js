@@ -24,6 +24,18 @@ $(document).ready(function() {
                 var url_string = window.location;
                 var url = new URL(url_string);
                 var class_id = url.searchParams.get("id");
+              
+                //safety handling
+                if(class_id != result.data.class_id && result.data.class_id != "0"){
+                  // not give an access for page
+                  var url= history.back(); 
+                  window.location = url;
+                  return false;
+                }
+
+
+                // install float button
+                $('#button_add-container').html('<a class="btn-floating btn-large" href="form-tambah-kegiatan.php?id='+class_id+'"><i class="large material-icons light-blue darken-4">add</i></a>');
 
                 var now = new Date();
                 month= now.getMonth() + 1;
@@ -88,7 +100,7 @@ $(document).ready(function() {
                                 <p>
                                 ` + item.summary + `
                                 </p>
-                                <a href="detail-kegiatan.php?id=`+item.id+`" class="waves-effect waves-light btn">Detail</a>
+                                <a href="javascript:goToDetail(`+item.id+`)" class="waves-effect waves-light btn">Detail</a>
                               </div>
                               
                   
@@ -189,7 +201,7 @@ function showActivityOnMonth(month){
                     <p>
                     ` + item.summary + `
                     </p>
-                    <a href="../05-detail-kegiatan/05-detail-kegiatan.php" class="waves-effect waves-light btn">Detail</a>
+                    <a href="javascript:goToDetail(`+ item.id +`)" class="waves-effect waves-light btn">Detail</a>
                   </div>
                   
       
@@ -209,4 +221,10 @@ function showActivityOnMonth(month){
             $("#activity-container").html("<br><br><br><h4 class='center'>Kegiatan tidak tersedia.</h4>");
         }
     });
+}
+
+function goToDetail(id){
+  var url= "detail-kegiatan.php?id="+id;
+  setCookie("immanuel_admin_activity", id, 1);
+  window.location = url;
 }

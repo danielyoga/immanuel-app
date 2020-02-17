@@ -25,6 +25,14 @@ $(document).ready(function() {
                 var url = new URL(url_string);
                 var activity_id = url.searchParams.get("id");
 
+                //safety handling
+                if(activity_id != getCookie('immanuel_admin_activity')){
+                    // not give an access for page
+                    var url= history.back(); 
+                    window.location = url;
+                    return false;
+                }
+
                 $.ajax({
                     url: "http://localhost/immanuel-app/api/activities/getById.php?id=" + activity_id,
                     contentType: "application/json",
@@ -70,7 +78,7 @@ $(document).ready(function() {
                           card += `
                           <a href="`+item.photo+`">
                           <div class="col s12 m4">
-                              <img class="responsive-img" src="` + item.photo +`">
+                              <img class="responsive-img" src="` + item.photo +`" >
                           </div>
                           </a>
                           `;

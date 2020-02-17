@@ -5,7 +5,7 @@
 <body>
 
 <!-- NAVBAR -->
-<?php require '../view/global/admin/navbar_teacher.php' ?>
+<?php require '../view/global/admin/navbar_detail_class.php' ?>
 <?php require '../view/global/admin/topbar_detail_kegiatan.php' ?>
 
   <div class="container">
