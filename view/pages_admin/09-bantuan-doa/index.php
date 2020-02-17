@@ -1,6 +1,3 @@
-<!-- NAVBAR -->
-<?php require '../../global/admin/navbar_admin.php' ?>
-
 <?php
     $con = mysqli_connect('localhost','root','','immanuel_app');
 
@@ -28,7 +25,7 @@
             <tr>
                 <th>Nama Anak</th>
                 <th>Nama Orang Tua</th>
-                <th>Kritik</th>
+                <th>Bantuan Doa</th>
             </tr>
         </thead>
         <tbody>
