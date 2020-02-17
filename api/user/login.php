@@ -45,8 +45,10 @@ if($phone_number_exists && password_verify($data->password, $user->password)){
            "id" => $user->id,
            "title" => $user->title,
            "name" => $user->name,
+           "class_id" => $user->class_id,
            "phone_number" => $user->phone_number,
-           "type" => $user->type
+           "type" => $user->type,
+           "isAdmin" => $user->isAdmin
        )
     );
  

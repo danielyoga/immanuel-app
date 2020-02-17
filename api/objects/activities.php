@@ -8,6 +8,7 @@ class Activities{
  
     // object properties
     public $activity_id;
+    public $class_id;
     public $date;
     public $title;
     public $reference;
@@ -15,6 +16,7 @@ class Activities{
     public $presenter_id;
     
     public $child_id;
+    public $month;
  
     // constructor
     public function __construct($db){
@@ -41,6 +43,29 @@ class Activities{
     
         // bind parent_id of children to be updated
         $stmt->bindParam(1, $this->activity_id);
+    
+        // execute query
+        $stmt->execute();
+
+        return $stmt;
+    }
+
+    // get activity by class
+    function getByClass(){
+    
+        $query = "SELECT *
+                    FROM " . $this->table_name . " activity " .
+                " WHERE 
+                    class_id = ? ".
+                " AND MONTH(date) = ? ".
+                " ORDER BY activity.date DESC ";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+    
+        // bind parent_id of children to be updated
+        $stmt->bindParam(1, $this->class_id);
+        $stmt->bindParam(2, $this->month);
     
         // execute query
         $stmt->execute();

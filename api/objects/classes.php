@@ -56,7 +56,8 @@ class Classes{
     
         // query to check if phone_number exists
         $query = "SELECT *
-                FROM " . $this->table_name ;
+                FROM " . $this->table_name .
+                " WHERE id != 0";
     
         // prepare the query
         $stmt = $this->conn->prepare( $query );

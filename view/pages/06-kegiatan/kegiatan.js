@@ -58,6 +58,8 @@ $(document).ready(function() {
 
                             // set date
                             var date = new Date(item.date);
+                            
+                            var setupMonth = parseInt(date.getMonth()) + 1;
 
                             // set neat summary
                             if(item.summary.length > thresholdSummaryChar){
@@ -73,7 +75,7 @@ $(document).ready(function() {
                                     <!-- Card Date -->
                                     <div class="card-action black-text">
                                         <i class="material-icons">date_range</i>
-                                        ` + nameOfDay[date.getDay()] + ", " + date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear() + `
+                                        ` + nameOfDay[date.getDay()] + ", " + date.getDate() + "-" + setupMonth + "-" + date.getFullYear() + `
                                     </div>
 
                                     <div class="card-content black-text">

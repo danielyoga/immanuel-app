@@ -7,8 +7,6 @@
             <!-- Home Button Trigger -->
             <a href="../admin/home.php" class="sidenav-trigger"><i class="material-icons">home</i></a>
 
-            <a href="#" class="brand-logo center" id="container-admin">Logo</a>
-
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
@@ -18,9 +16,6 @@
             </ul>
 
             <ul class="right hide-on-med-and-down">
-                <li><a href="../admin/saran-kritik.php">Saran & Kritik</a></li>
-                <li><a href="../admin/alasan-ketidakhadiran.php">Alasan Ketidakhadiran</a></li>
-                <li><a href="../admin/bantuan-doa.php">Pray</a></li>
                 <!-- log out , cara 1 hapus cookie -->
                 <li><a href="javascript:logout()">Log Out</a></li>
             </ul>
@@ -36,9 +31,6 @@
 <ul class="sidenav" id="mobile-menu">
 
     <!-- sidenav content -->
-    <li><a href="../admin/saran-kritik.php">Saran & Kritik</a></li>
-    <li><a href="../admin/alasan-ketidakhadiran.php">Alasan Ketidakhadiran</a></li>
-    <li><a href="../admin/bantuan-doa.php">Pray</a></li>
     <li><a href="javascript:logout()"><i class="material-icons" style="color: black;">close</i>Log Out</a></li>
     
 </ul>

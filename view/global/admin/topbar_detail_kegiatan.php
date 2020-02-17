@@ -6,9 +6,7 @@
       <!-- comment : ukuran font dekapolis dibuat lebih besar -->
       <span class="white-text" style="font-size: 5em;">Dekapolis</span>
       <br>
-      <br>
-      <a href="../06-daftar-anak/06-daftar-anak.php" class="waves-effect waves-light btn black white-text">Daftar Anak</a>
-      <br><br>
+      
   </div>
 
   <!-- buttons edit kegiatan-->

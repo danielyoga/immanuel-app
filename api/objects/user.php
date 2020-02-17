@@ -12,7 +12,10 @@ class User{
     public $title;
     public $phone_number;
     public $password;
+
+    public $class_id;
     public $type;
+    public $isAdmin;
  
     // constructor
     public function __construct($db){
@@ -81,7 +84,7 @@ class User{
         $num = $stmt->rowCount();
     
         // if phone_number exists, assign values to object properties for easy access and use for php sessions
-        if($num>0){
+        if($num>0){ // PARENT
     
             // get record details / values
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -98,7 +101,7 @@ class User{
 
         }
 
-        else{
+        else{ // TEACHER
                 // query to check if phone_number exists
                 $query = "SELECT *
                 FROM teachers 
@@ -130,6 +133,8 @@ class User{
                     $this->id       = $row['teacher_id'];
                     $this->name     = $row['name'];
                     $this->password = $row['password'];
+                    $this->class_id = $row['class_id'];
+                    $this->isAdmin  = $row['isAdmin'];
                     $this->type     = "teacher";
 
                     // return true because phone_number exists in the database

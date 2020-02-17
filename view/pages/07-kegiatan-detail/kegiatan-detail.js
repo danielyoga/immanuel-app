@@ -44,9 +44,10 @@ $(document).ready(function() {
 
                         var nameOfDay = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];                     
 
-                            // set date
+                        // set date
                         var date = new Date(result[0].date);
-                        var dateStr = nameOfDay[date.getDay()] + ", " + date.getDate() + "-" + date.getMonth() + "-" + date.getFullYear();                           
+                        var setupMonth = parseInt(date.getMonth()) + 1;
+                        var dateStr = nameOfDay[date.getDay()] + ", " + date.getDate() + "-" + setupMonth + "-" + date.getFullYear();                           
                                     
                         $("#date-container").html(dateStr);
                         $("#title-container").html(result[0].title);

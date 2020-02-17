@@ -4,7 +4,7 @@
       <!-- img = logo immanuel kids -->
       <!-- <img src="../../img/logo.png" alt=""/> -->
       <!-- comment : ukuran font dekapolis dibuat lebih besar -->
-      <span class="white-text" style="font-size: 5em;">Dekapolis</span>
+      <span class="white-text" style="font-size: 5em;" id="class_name-container"></span>
       <br>
       <br>
       <a href="../06-daftar-anak/06-daftar-anak.php" class="waves-effect waves-light btn black white-text">Daftar Anak</a>
@@ -16,16 +16,24 @@
         <!-- comment : text nya dibuat warna putih -->
         <div class="row">
           <div class="col s3"></div>
-          <div class="input-field col s6">
-            
+          <div class="input-field col s6"  style="background-color:white;border-radius:30px;">
             <!-- pilihan kelas -->
-            <select>
-              <option value="yes">Januari</option>
-              <option value="no">Februari</option>
-              <option value="dont">I Don't Know</option>
+            <select id="select_month" onchange="javascript:showActivityOnMonth(this.value)">
+              <?php
+                $month_now = date('m');
+                $month_now = str_replace( "0", "", date('m') );
+
+                $months = array("", "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+                for ($x = 1; $x < count($months); $x++) {
+                  if($x == $month_now ){
+                    echo '<option value="'.$x.'" selected>'.$months[$x].'</option>';
+                  }
+                  else{
+                    echo '<option value="'.$x.'">'.$months[$x].'</option>';
+                  }
+                } 
+              ?>
             </select>
-            <!-- placeholder -->
-            <label>Bulan</label>
           </div>
           <div class="col s3"></div>
         </div> <!--end div row-->
@@ -37,14 +45,39 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
-          
- <script>
- (function($){
-   $(function(){
-     // Plugin initialization
-     $('select').not('.disabled').formSelect();
-   }); 
- })(jQuery); // end of jQuery name space
- </script>
+     <script>
+      $(document).ready(function() {
+        $('select').not('.disabled').formSelect();
+        
+        var url_string = window.location;
+        var url = new URL(url_string);
+        var class_id = url.searchParams.get("id");
 
- 
+        if(class_id == 0){
+          var url= "../login.php"; 
+          window.location = url; 
+        }
+
+        $.ajax({
+            url:  "http://localhost/immanuel-app/api/class/getall.php",
+            contentType: "application/json",
+            dataType: 'json',
+            success: function(result){
+                var name_class;
+
+                var kelas = result.records;
+                kelas.forEach(item => {
+                    if(item.id == class_id){
+                        name_class = item.name;
+                    } 
+                });
+
+                $("#class_name-container").html(name_class);
+            },
+            error: function(xhr, resp, text){
+              var url= document.referrer; 
+              window.location = url; 
+            }
+        });
+    });
+      </script>
