@@ -43,9 +43,9 @@ function getCookie(cname){
     return "";
 }
 
-function markAsAttend(id){
+function score(id){
     $.ajax({
-        url:  "http://localhost/immanuel-app/api/attendances/update.php",
+        url:  "http://localhost/immanuel-app/api/reports/update.php",
         type : "POST",
         contentType: "application/json",
         data:JSON.stringify({"id": id }),

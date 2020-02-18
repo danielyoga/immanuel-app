@@ -29,7 +29,7 @@ $response = json_decode($response, true); //because of true, it's in an array
 <link rel="stylesheet" href="../view/pages_admin/09-bantuan-doa/css/datatables.min.css" type="text/css">
 <title>Immanuel Kids- Bantuan Doa</title>
 </head>
-<body><a href="javascript:window.location=history.back();">Back to home</a>
+<body><a href="javascript:window.location=window.history.go(-1);;">Back to home</a>
 
 <br><br>
 <h1 style="text-align:center;">Bantuan Doa</h1>

@@ -27,7 +27,7 @@ $(document).ready(function() {
                 //safety handling
                 if(id != getCookie('immanuel_activity')){
                     // not give an access for page
-                    var url= history.back(); 
+                    var url= window.history.go(-1);
                     window.location = url;
                     return false;
                 }

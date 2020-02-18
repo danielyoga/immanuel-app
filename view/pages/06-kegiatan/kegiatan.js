@@ -33,7 +33,7 @@ $(document).ready(function() {
                 //safety handling
                 if(id != getCookie('immanuel_child')){
                     // not give an access for page
-                    var url= history.back(); 
+                    var url= javascript:window.history.go(-1); 
                     window.location = url;
                     return false;
                 }

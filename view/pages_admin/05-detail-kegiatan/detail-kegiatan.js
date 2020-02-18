@@ -28,7 +28,7 @@ $(document).ready(function() {
                 //safety handling
                 if(activity_id != getCookie('immanuel_admin_activity')){
                     // not give an access for page
-                    var url= history.back(); 
+                    var url= window.history.go(-1);
                     window.location = url;
                     return false;
                 }
@@ -53,7 +53,7 @@ $(document).ready(function() {
 
                     },
                     error: function(xhr, resp, text){
-                      var url = history.back(); 
+                      var url = window.history.go(-1);
                       window.location = url; 
                     }
                 });

@@ -5,14 +5,14 @@
         <nav>
         <div class="nav-wrapper" style="background-color: #001D39;">
             <!-- Home Button Trigger -->
-            <a href="javascript:window.location=history.back();" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
+            <a href="javascript:window.history.go(-1);" class="sidenav-trigger"><i class="material-icons">arrow_back</i></a>
 
             <!-- Sidenav Trigger -->
             <a href="#" data-target="mobile-menu" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
 
             <!-- Home Button Trigger -->
             <ul class="left hide-on-med-and-down">
-            <li><a href="javascript:window.location=history.back();"><i class="material-icons">arrow_back</i></a></li>
+            <li><a href="javascript:window.history.go(-1);"><i class="material-icons">arrow_back</i></a></li>
             </ul>
 
             <ul class="right hide-on-med-and-down">

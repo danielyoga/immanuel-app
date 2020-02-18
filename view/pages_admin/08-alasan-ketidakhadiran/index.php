@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../view/pages_admin/08-alasan-ketidakhadiran/css/datatables.min.css" type="text/css">
 </head>
 <body>
-<a href="javascript:window.location=history.back();">Back to home</a>
+<a href="javascript:window.history.go(-1);">Back to home</a>
 
 <br><br>
 <h1 style="text-align:center;">Alasan Ketidakhadiran</h1>

@@ -67,6 +67,26 @@ class Classes{
     
         return $stmt;
     }
+
+    // get class by id
+    function getById(){
+    
+        // query to check if phone_number exists
+        $query = "SELECT *
+                FROM " . $this->table_name .
+                " WHERE id = ?";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare( $query );
+
+        // bind parent_id of children to be updated
+        $stmt->bindParam(1, $this->id);
+    
+        // execute the query
+        $stmt->execute();
+    
+        return $stmt;
+    }
  
     
 }

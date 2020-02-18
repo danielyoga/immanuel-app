@@ -30,7 +30,7 @@ $response = json_decode($response, true); //because of true, it's in an array
 <link rel="stylesheet" href="../view/pages_admin/07-saran-dan-kritik/css/datatables.min.css" type="text/css">
 </head>
 <body>
-<a href="javascript:window.location=history.back();">Back to home</a>
+<a href="javascript:window.history.go(-1);">Back to home</a>
 
 <br><br>
 <h1 style="text-align:center;">Kritik dan Saran</h1>

@@ -80,7 +80,7 @@
                 $("#class_name-container").html(name_class);
             },
             error: function(xhr, resp, text){
-              var url= document.referrer; 
+              var url= window.history.go(-1);; 
               window.location = url; 
             }
         });

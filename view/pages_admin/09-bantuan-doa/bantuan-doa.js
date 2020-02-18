@@ -21,7 +21,7 @@ $(document).ready(function() {
                 //safety handling
                 if(class_id != result.data.class_id && result.data.class_id != "0"){
                   // not give an access for page
-                  var url= history.back(); 
+                  var url= window.history.go(-1); 
                   window.location = url;
                   return false;
                 }
