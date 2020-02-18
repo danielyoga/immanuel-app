@@ -16,10 +16,12 @@
                 <th>Nama Anak</th>
                 <th>Nama Orang Tua</th>
                 <th>Alasan Ketidakhadiran</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+            <td>test</td>
             <td>test</td>
             <td>test</td>
             <td>test</td>

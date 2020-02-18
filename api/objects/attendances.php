@@ -1,50 +1,39 @@
 <?php
 
-class Activities{
+class Attendances{
  
     // database connection and table name
     private $conn;
-    private $table_name = "activities";
+    private $table_name = "attendances";
  
     // object properties
-    public $activity_id;
-    public $class_id;
-    public $date;
-    public $title;
-    public $reference;
-    public $summary;
-    public $presenter_id;
-    
+    public $attendance_id;
     public $child_id;
-    public $month;
+    public $activity_id;
+    public $isAttend;
  
     // constructor
     public function __construct($db){
         $this->conn = $db;
     }
  
-    // create new activity record
+    // create new attendances record
     function create(){
         // insert query
         $query = "INSERT INTO " . $this->table_name . "
                 SET
-                    class_id = :class_id,
-                    date = :date,
-                    title = :title,
-                    reference = :reference,
-                    summary = :summary,
-                    presenter_id = :presenter_id";
+                    child_id = :child_id,
+                    activity_id = :activity_id,
+                    isAttend = :isAttend";
     
         // prepare the query
         $stmt = $this->conn->prepare($query);
         
         // bind the values
-        $stmt->bindParam(':class_id', $this->class_id);
-        $stmt->bindParam(':date', $this->date);
-        $stmt->bindParam(':title', $this->title);
-        $stmt->bindParam(':reference', $this->reference);
-        $stmt->bindParam(':summary', $this->summary);
-        $stmt->bindParam(':presenter_id', $this->presenter_id);
+        $stmt->bindParam(':child_id', $this->child_id);
+        $stmt->bindParam(':activity_id', $this->activity_id);
+        $stmt->bindParam(':isAttend', $this->isAttend);
+    
     
         // execute the query, also check if query was successful
         if($stmt->execute()){
