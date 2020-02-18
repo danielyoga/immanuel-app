@@ -1,31 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <!-- Specify the character encoding for the HTML document -->
-    <meta charset="UTF-8">
+<!-- GLOBAL HEAD -->
+<?php require '../view/global/head.php' ?>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- get API with PHP -->
+<?php
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+$curl = curl_init();
 
-    <!-- Compiled minified Jquery -->
-    <script
-			  src="https://code.jquery.com/jquery-3.4.1.min.js"
-			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-			  crossorigin="anonymous"></script>
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://localhost/immanuel-app/api/attendances/getByActivity.php?id=" . $_GET['id'],
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "cache-control: no-cache"
+  ),
+));
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Immanuel Kids - Absensi</title>
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-  </head>
+curl_close($curl);
 
-  <body>
-    
-  <!-- NAVBAR -->
-  <?php require '../view/global/admin/navbar_detail_class.php' ?>
+$response = json_decode($response, true); //because of true, it's in an array
+
+if(!isset($response['count']) ){
+  header("Refresh: 0");
+}
+?>
+<title>Immanuel Kids - Absensi</title>
+</head>
+<body>
+<!-- NAVBAR -->
+<?php require '../view/global/admin/navbar_detail_class.php' ?>
 
       <br>
 
@@ -34,6 +41,7 @@
       <br>
 
       <!-- table -->
+    <form action="#">
       <table class="centered striped">
         <thead>
           <tr>
@@ -41,77 +49,35 @@
               <th>Kehadiran</th>
           </tr>
         </thead>
-
         <tbody>
 
-    <!-- row table -->
-          <tr>
-            <td id="nama_anak">Alvin</td>
-            <td id="kehadiran">
-              <!-- radio button kehadiran -->
-            <form action="#">
+        <?php
 
-              <p>
-                <label>
-                <input name="kehadiran" type="radio" value="hadir"/>
-                <span>Hadir</span>
-                </label>
-                <label>
-                <input name="kehadiran" type="radio" value="tidak_hadir"/>
-                <span>Tidak Hadir</span>
-                </label>
-              </p>
-              
-              </form>
-            </td>
+            if($response['count'] > 0){
+                foreach ($response['records'] as $row) {
+                    echo '<tr>';
+                    echo '<td>'.$row['child_name'].'</td>';
+
+                    // Button read
+                    if($row['isAttend'] != 1){
+                        echo '<td><a class="waves-effect waves-light btn" onclick="javascript:markAsAttend(`'.$row['id'].'`);" >Hadir</a></td>';
+                    }
+                    else{
+                        echo '<td><p><label><input type="checkbox" checked="checked" disabled="disabled" /><span>Hadir</span></label></p></td>';
+                    }
+                    echo '</tr>';
+                }
+            }
+            else{
+              echo '<tr><td colspan="2">Tidak ada murid yang terdaftar</td></tr>';
+            }
             
-          </tr>
+        ?>
 
-          <tr>
-            <td id="nama_anak">Alvin</td>
-            <td id="kehadiran">
-              <!-- radio button kehadiran -->
-            <form action="#">
-
-              <p>
-                <label>
-                <input name="kehadiran" type="radio" value="hadir"/>
-                <span>Hadir</span>
-                </label>
-                <label>
-                <input name="kehadiran" type="radio" value="tidak_hadir"/>
-                <span>Tidak Hadir</span>
-                </label>
-              </p>
-              
-              </form>
-            </td>
-            
-          </tr>
-
-          <tr>
-            <td id="nama_anak">Alvin</td>
-            <td id="kehadiran">
-              <!-- radio button kehadiran -->
-            <form action="#">
-
-              <p>
-                <label>
-                <input name="kehadiran" type="radio" value="hadir"/>
-                <span>Hadir</span>
-                </label>
-                <label>
-                <input name="kehadiran" type="radio" value="tidak_hadir"/>
-                <span>Tidak Hadir</span>
-                </label>
-              </p>
-              
-              </form>
-            </td>
-            
-          </tr>
         </tbody>
       </table>
+    </form>
 
+<script src="../view/pages_admin/edit_kegiatan/absensi/absensi.js"></script>
 </body>
 </html>

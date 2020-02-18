@@ -28,7 +28,7 @@ class Activities{
         // insert query
         $query = "INSERT INTO " . $this->table_name . "
                 SET
-                    class_id = :class_id,
+                    activity_class_id = :class_id,
                     date = :date,
                     title = :title,
                     reference = :reference,
@@ -82,7 +82,7 @@ class Activities{
         $query = "SELECT *
                     FROM " . $this->table_name . " activity " .
                 " WHERE 
-                    class_id = ? ".
+                    activity_class_id = ? ".
                 " AND MONTH(date) = ? ".
                 " ORDER BY activity.date DESC ";
     

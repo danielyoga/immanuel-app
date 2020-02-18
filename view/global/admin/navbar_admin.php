@@ -55,6 +55,7 @@
         unSetCookie("jwt");
         unSetCookie("immanuel_admin_activity");
         unSetCookie("immanuel_admin_class");
+        unSetCookie("immanuel_admin_class_id");
         var url= "../login.php"; 
         window.location = url; 
     }

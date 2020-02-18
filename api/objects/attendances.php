@@ -43,76 +43,52 @@ class Attendances{
         return false;
     }
 
-    // get activity by id
-    function getById(){
+    // get activity by Activity
+    function getByActivity(){
     
         $query = "SELECT *
-                    FROM " . $this->table_name . " activity " .
-                " LEFT JOIN teachers teacher
-                    ON activity.presenter_id = teacher.teacher_id " .
+                    FROM " . $this->table_name . " attendance " .
+                " LEFT JOIN activities activity
+                    ON attendance.activity_id = activity.activity_id " .
+                " LEFT JOIN children child
+                    ON attendance.child_id = child.children_id " .
                 " WHERE 
-                    activity_id = ?";
+                    attendance.activity_id = ? ";
     
         // prepare the query
         $stmt = $this->conn->prepare( $query );
     
         // bind parent_id of children to be updated
         $stmt->bindParam(1, $this->activity_id);
-    
+
         // execute query
         $stmt->execute();
 
         return $stmt;
     }
 
-    // get activity by class
-    function getByClass(){
+    // update review
+    public function update(){
     
-        $query = "SELECT *
-                    FROM " . $this->table_name . " activity " .
-                " WHERE 
-                    class_id = ? ".
-                " AND MONTH(date) = ? ".
-                " ORDER BY activity.date DESC ";
+        // if no posted password, do not update the password
+        $query = "UPDATE " . $this->table_name . "
+                SET
+                    isAttend = 1 
+                WHERE attendance_id = :attendance_id";
     
         // prepare the query
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
     
-        // bind parent_id of children to be updated
-        $stmt->bindParam(1, $this->class_id);
-        $stmt->bindParam(2, $this->month);
+        $stmt->bindParam(':attendance_id', $this->attendance_id);
+   
+        // execute the query
+        if($stmt->execute()){
+            return true;
+        }
     
-        // execute query
-        $stmt->execute();
-
-        return $stmt;
+        return false;
     }
 
-    // get activity by children id
-    function getByChildren(){
-    
-        $query = "SELECT *
-                    FROM " . $this->table_name . " activity " .
-                " LEFT JOIN attendances attendance
-                    ON activity.activity_id = attendance.activity_id " .
-                " WHERE 
-                    attendance.child_id = ? " .
-                " ORDER BY activity.date DESC "; 
-                // " LIMIT 8";
-    
-        // prepare the query
-        $stmt = $this->conn->prepare( $query );
-    
-        // bind parent_id of children to be updated
-        $stmt->bindParam(1, $this->child_id);
-    
-        // execute query
-        $stmt->execute();
-
-        return $stmt;
-    }
- 
-    
 }
 
 ?>

@@ -35,7 +35,8 @@ $(document).ready(function(){
   $('#class-container').html(getCookie('immanuel_admin_class'));
   $('#button_absensi-container').html(`<a href="absensi.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo darken-4">Absensi</a>`);
   $('#button_penilaian-container').html(`<a href="penilaian.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo darken-2">Penilaian</a>`);
-  $('#button_upload-container').html(`<a href="upload.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo lighten-2">Upload</a>`);
+  // $('#button_upload-container').html(`<a href="upload.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo lighten-2">Upload</a>`);
+  $('#button_upload-container').html(`<a href="javascript:alert('segera hadir, sementara minta tolong melalui admin.');" class="waves-effect waves-light btn indigo lighten-2">Upload</a>`);
 });
 </script>
  

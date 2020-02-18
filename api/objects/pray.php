@@ -67,7 +67,7 @@ class Pray{
         return $stmt;
     }
 
-    // update review
+    // update pray
     public function update(){
     
         // if no posted password, do not update the password

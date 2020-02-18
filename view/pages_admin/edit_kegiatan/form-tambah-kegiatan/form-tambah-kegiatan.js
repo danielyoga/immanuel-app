@@ -33,8 +33,6 @@ $(document).on('submit', '#form_tambah_kegiatan', function(e){
     var sign_up_form=$(this);
     var form_data=JSON.stringify(sign_up_form.serializeObject());
 
-    console.log(form_data);
-
     // submit form data to api
     $.ajax({
         url: "http://localhost/immanuel-app/api/activities/create.php",
@@ -47,6 +45,7 @@ $(document).on('submit', '#form_tambah_kegiatan', function(e){
                 outDuration: 1000
             });
             sign_up_form.find('input').val('');
+            
         },
         error: function(xhr, resp, text){
             M.toast({html: 'Gagal, mohon hubungi admin.'});

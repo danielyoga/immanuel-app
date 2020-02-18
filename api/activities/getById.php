@@ -40,6 +40,7 @@ if($num>0){
  
         $activity_item=array(
             "id" => $activity_id,
+            "class_id" => $activity_class_id,
             "date" => $date,
             "title" => $title,
             "reference" => $reference,

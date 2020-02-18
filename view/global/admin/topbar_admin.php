@@ -73,6 +73,7 @@
                         name_class = item.name;
                         
                         setCookie("immanuel_admin_class", name_class, 1);
+                        setCookie("immanuel_admin_class_id", item.id, 1);
                     } 
                 });
 
