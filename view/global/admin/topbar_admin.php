@@ -7,6 +7,7 @@
       <span class="white-text" style="font-size: 5em;" id="class_name-container"></span>
       <br>
       <br>
+      <span id="button_report-container"></span>
       <span id="button_daftar_anak-container"></span>
       <br><br>
 
@@ -54,6 +55,7 @@
         var class_id = url.searchParams.get("id");
 
         $('#button_daftar_anak-container').html('<a href="daftar-anak.php?id='+class_id+'" class="waves-effect waves-light btn black white-text">Daftar Anak</a>');
+        $('#button_report-container').html('<a href="report.php?id='+class_id+'" class="waves-effect waves-light btn black white-text">Report</a>');
 
         if(class_id == 0){
           var url= "../login.php"; 
