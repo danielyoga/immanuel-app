@@ -12,20 +12,7 @@ $(document).ready(function() {
         contentType : 'application/json',
         data : jwt,
         success : function(result) {      
-            
-                // access granted
-                var url_string = window.location;
-                var url = new URL(url_string);
-                var class_id = url.searchParams.get("id");
-              
-                //safety handling
-                if(class_id != result.data.class_id && result.data.class_id != "0"){
-                  // not give an access for page
-                  var url= window.history.go(-1); 
-                  window.location = url;
-                  return false;
-                }
-              
+                          
         },
         error: function(xhr, resp, text){
             var url= "../login.php"; 

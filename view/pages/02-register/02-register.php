@@ -56,7 +56,7 @@
             <p>
               <label>
                 <input class="with-gap" name="title" type="radio" value="Ibu"required/>
-                <span>Ib.</span>
+                <span>Ibu</span>
               </label>
             </p>
           </div>

@@ -1,8 +1,8 @@
     <!-- GLOBAL HEAD -->
     <?php require './view/global/head.php' ?>
 
-    <link rel="stylesheet" href="./view/pages/03-sign-in/03-sign-in.css">
-    <title>Immanuel Kids - Sign In</title>
+    <link rel="stylesheet" href="./view/pages/03-change-password/03-sign-in.css">
+    <title>Immanuel Kids - Ganti Password</title>
   </head>
 
   <body>
@@ -44,7 +44,19 @@
         <div class="col m3"></div>
           <div class="input-field col s12 m6" id="password-group">
             <input name="password" id="password" type="password" class="validate" required>
-            <label class="active" for="password">Password</label>
+            <label class="active" for="password">Password Lama</label>
+          </div>
+        <div class="col m3"></div>
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="container">
+      <div class="row">
+        <div class="col m3"></div>
+          <div class="input-field col s12 m6" id="password-group">
+            <input name="password_new" id="password_new" type="password" class="validate" required>
+            <label class="active" for="password_new">Password Baru</label>
           </div>
         <div class="col m3"></div>
       </div>
@@ -57,8 +69,8 @@
         
         <!-- button -->
         <a>
-          <button class="btn col s12 m6 waves-effect waves-light" type="submit" name="action">Sign In
-            <i class="material-icons right">send</i>
+          <button class="btn col s12 m6 waves-effect waves-light" type="submit" name="action">Ganti Password
+            <i class="material-icons right"></i>
           </button>
         </a>
 
@@ -73,7 +85,7 @@
     <!-- Compiled and minified JavaScript -->
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./view/pages/03-sign-in/sign-in.js"></script>
+    <script src="./view/pages/03-change-password/sign-in.js"></script>
     <script src="./view/script/cookies.js"></script>
   </body>
 </html>

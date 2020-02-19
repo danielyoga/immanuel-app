@@ -22,14 +22,17 @@
       </a>
     </div>
 
-        <!-- Modal Trigger -->
-        <a class="btn modal-trigger" href="#modal1" data-target="terms">Modal Default</a>
+    <!-- Modal Trigger -->
+    <!-- <div>
+    <a class="btn modal-trigger" href="#modal1" data-target="terms">Modal Default</a>
+    </div> -->
+    
     
     <!-- Modal Structure -->
-    <div class="modal"  id="terms">
+    <!-- <div class="modal"  id="terms"> -->
 
         <!-- content -->
-      <div class="modal-content">
+      <!-- <div class="modal-content">
         <h4>Anak</h4>
         <p>Andi Subarjo</p>
         <span>Tidak hadir pada : Minggu, 12 - 02 - 2020</span>
@@ -45,7 +48,7 @@
       <div class="modal-footer">
         <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
       </div>
-    </div>
+    </div> -->
 
     
     <!-- Compiled and minified JavaScript -->
@@ -54,31 +57,6 @@
     <script src="./view/pages/04-home/home.js"></script>
     
     <script src="./view/script/cookies.js"></script>
-
-    
-<!-- pop up ketidak hadiran -->
-
-<script>
-    $(document).ready(function(){
-       $('#terms').modal();
-       $('#terms').modal('open'); 
-    });
-</script>
-
-<script>
-      document.addEventListener('DOMContentLoaded', function() {
-    const box = document.querySelector('.modal');
-    M.Modal.init(box, {});
-  });
-</script>
-
-<script>
-      $(document).ready(function(){
-    $('.modal').modal();
-  });
-</script>
-
-
 
   </body>
 </html>

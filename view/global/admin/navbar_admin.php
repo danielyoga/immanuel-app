@@ -15,6 +15,7 @@
             <!-- Home Button Trigger -->
             <ul class="left hide-on-med-and-down">
             <li><a href="../admin/home.php"><i class="material-icons">home</i></a></li>
+            <li><a href="../admin/berita.php">Berita</a></li>
             </ul>
 
             <ul class="right hide-on-med-and-down">
@@ -36,6 +37,7 @@
 <ul class="sidenav" id="mobile-menu">
 
     <!-- sidenav content -->
+    <li><a href="../admin/berita.php">Berita</a></li>
     <li><a href="../admin/saran-kritik.php">Saran & Kritik</a></li>
     <li><a href="../admin/alasan-ketidakhadiran.php">Alasan Ketidakhadiran</a></li>
     <li><a href="../admin/bantuan-doa.php">Pray</a></li>

@@ -17,6 +17,7 @@
 
             <ul class="right hide-on-med-and-down">
                 <!-- log out , cara 1 hapus cookie -->
+                <li><a href="../admin/berita.php">Berita</a></li>
                 <li><a href="javascript:logout()">Log Out</a></li>
             </ul>
 
@@ -31,6 +32,7 @@
 <ul class="sidenav" id="mobile-menu">
 
     <!-- sidenav content -->
+    <li><a href="../admin/berita.php">Berita</a></li>
     <li><a href="javascript:logout()"><i class="material-icons" style="color: black;">close</i>Log Out</a></li>
     
 </ul>

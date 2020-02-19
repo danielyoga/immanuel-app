@@ -12,11 +12,15 @@ $(document).ready(function() {
         contentType : 'application/json',
         data : jwt,
         success : function(result) {      
-            // do nothing
+            
+                // access granted
+                var url_string = window.location;
+                var url = new URL(url_string);
+                var class_id = url.searchParams.get("id");
               
         },
         error: function(xhr, resp, text){
-            var url= window.history.go(-1);
+            var url= "../login.php"; 
             window.location = url; 
         }
     });
@@ -43,9 +47,9 @@ function getCookie(cname){
     return "";
 }
 
-function markAsAttend(id){
+function markAsRead(id){
     $.ajax({
-        url:  "http://localhost/immanuel-app/api/attendances/update.php",
+        url:  "http://localhost/immanuel-app/api/attendances/markAsRead.php",
         type : "POST",
         contentType: "application/json",
         data:JSON.stringify({"id": id }),
@@ -56,23 +60,6 @@ function markAsAttend(id){
         },
         error: function(xhr, resp, text){
             alert('Gagal menandai' + text);
-        }
-    });
-}
-
-function resetAttendance(id){
-    $.ajax({
-        url:  "http://localhost/immanuel-app/api/attendances/reset.php",
-        type : "POST",
-        contentType: "application/json",
-        data:JSON.stringify({"id": id }),
-        dataType: 'json',
-        success: function(result){
-            alert('Absen di reset');
-            location.reload(); 
-        },
-        error: function(xhr, resp, text){
-            alert('Gagal mereset' + text);
         }
     });
 }

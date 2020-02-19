@@ -18,7 +18,25 @@ class Medias{
  
     // create new user record
     function create(){
+        // insert query
+        $query = "INSERT INTO " . $this->table_name . "
+                SET
+                    activity_id = :activity_id,
+                    photo = :photo";
     
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(':activity_id', $this->activity_id);
+        $stmt->bindParam(':photo', $this->photo);
+    
+    
+        // execute the query, also check if query was successful
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
     }
 
 

@@ -1,32 +1,6 @@
 $(document).ready(function() {
     M.updateTextFields();
 
-
-    // ====================================
-    // validation
-    // ====================================
-
-    var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
-
-    $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
-        type : "POST",
-        contentType : 'application/json',
-        data : jwt,
-        success : function(result) {     
-            // auto login  
-            if(result.data.type == "parent"){
-                window.location ="home.php";
-            }
-            if(result.data.type == "teacher"){
-                window.location ="admin/home.php";
-            }
-        },
-        error: function(xhr, resp, text){
-            // do nothing 
-        }
-    });
-
     // trigger when login form is submitted
     $(document).on('submit', '#form_login', function(e){
 
@@ -38,24 +12,13 @@ $(document).ready(function() {
     
         // submit form data to api
         $.ajax({
-            url: "http://localhost/immanuel-app/api/user/login.php",
+            url: "http://localhost/immanuel-app/api/user/changepassword.php",
             type : "POST",
             contentType : 'application/json',
             data : form_data,
             success : function(result) {
-                M.toast({ html: 'Login Success' });
+                M.toast({ html: 'ganti password sukses, silahkan login kembali di <button class="btn-flat toast-action" onclick="window.location.href=`login.php`">sini</button>' });
                 sign_in_form.find('input').val('');
-                
-                // store jwt to cookie
-                setCookie("jwt", result.jwt, 1);
-
-                if(result.type == "parent"){
-                    window.location ="home.php";
-                }
-                if(result.type == "teacher"){
-                    window.location ="admin/home.php";
-                }
-                
             },
             error: function(xhr, resp, text){
                 M.toast({html: 'Wrong phone number or password.'});

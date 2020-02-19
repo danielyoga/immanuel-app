@@ -19,14 +19,46 @@ $(document).ready(function() {
         data : jwt,
         success : function(result) {          
             $("#container-parent").html(result.data.title + " " +result.data.name.split(" ")[0]);
+            
+            var parent_id = result.data.id;
 
+            // ====================================
+            // check notif for anak bolos
+            // ====================================
+            
+            $.ajax({
+                url: "http://localhost/immanuel-app/api/attendances/getAllByParent.php?id=" + parent_id ,
+                contentType: "application/json",
+                dataType: 'json',
+                success: function(result){
+                    
+                    var today = new Date;
+
+                    var activity = result.records;
+                    activity.forEach(item => {
+
+                        var activity_date = new Date(item.date);
+                        activity_date.setHours(11);
+
+                        if(today >= activity_date){
+                            var toastHTML = '<span><b><u>'+ item.child_name + "</u></b> tak hadir pada tgl " + item.date+'</span><button onclick="window.location.href=`form-alasan.php?id='+item.id+'`" class="btn-flat toast-action">Lihat Keterangan</button>';
+                            M.toast({html: toastHTML,displayLength:60000});
+                        }
+                    
+                    });
+
+                },
+                error: function(xhr, resp, text){
+                    // do nothing
+                }
+            });
 
                 // ====================================
                 // init children card
                 // ====================================
 
                 $.ajax({
-                    url: "http://localhost/immanuel-app/api/children/getByParent.php?parent_id=" + result.data.id ,
+                    url: "http://localhost/immanuel-app/api/children/getByParent.php?parent_id=" + parent_id ,
                     contentType: "application/json",
                     dataType: 'json',
                     success: function(result){
@@ -77,15 +109,7 @@ $(document).ready(function() {
                         });
 
                         $("#children-container").html(card);
-      
-                        // var card = `
                         
-                        // `;
-                        
-                        // selection += `</select><label>Pilih kelas</label>`;
-
-                        
-
                     },
                     error: function(xhr, resp, text){
                         $("#children-container").html("<br><br><br><h4 class='center'>No child available.</h4>");

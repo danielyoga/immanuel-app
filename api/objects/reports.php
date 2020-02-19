@@ -92,6 +92,28 @@ class Reports{
         return false;
     }
 
+    // reset review
+    public function reset(){
+    
+        // if no posted password, do not update the password
+        $query = "UPDATE " . $this->table_name . "
+                SET
+                    value = 0 
+                WHERE activity_id = :activity_id";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+    
+        $stmt->bindParam(':activity_id', $this->activity_id);
+   
+        // execute the query
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
+    }
+
 }
 
 ?>

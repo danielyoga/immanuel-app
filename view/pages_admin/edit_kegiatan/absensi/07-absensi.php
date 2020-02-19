@@ -78,6 +78,17 @@ if(!isset($response['count']) ){
       </table>
     </form>
 
+<br><br>
+    <!-- button reset -->
+    <div class="container">
+    <div class="row">
+    <div class="col s12 center">
+    <a class="waves-effect waves-light btn red" onclick="javascript:resetAttendance(<?php echo $_GET['id'];?>)">Reset</a>
+    </div>
+    </div>
+    </div>
+    
+
 <script src="../view/pages_admin/edit_kegiatan/absensi/absensi.js"></script>
 </body>
 </html>

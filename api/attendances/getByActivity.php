@@ -136,7 +136,6 @@ else{
                 // display message: attendances was created
                 echo json_encode(array( "error" => false, "message" => "attendances was created."));
 
-                header('Refresh:0');
             }
             
             // message if unable to create attendances

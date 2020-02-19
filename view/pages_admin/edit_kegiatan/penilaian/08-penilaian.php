@@ -126,6 +126,12 @@ if(!isset($response['count']) ){
     </table>
     </form>
 
+    <br>
+
+    <!-- button reset -->
+    <a class="waves-effect waves-light btn red center" onclick="javascript:resetScore(<?php echo $_GET['id'];?>)">Reset</a>
+    
+
     </div> <!-- container div end-->
 
 <script src="../view/pages_admin/edit_kegiatan/penilaian/penilaian.js"></script>    

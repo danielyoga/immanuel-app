@@ -19,7 +19,25 @@ class Events{
  
     // create new activity record
     function create(){
-    
+        // insert query
+        $query = "INSERT INTO " . $this->table_name . "
+        SET
+             date = :date, 
+             poster = :poster";
+
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':date', $this->date);
+        $stmt->bindParam(':poster', $this->poster);
+
+
+        // execute the query, also check if query was successful
+        if($stmt->execute()){
+        return true;
+        }
+
+        return false;
     }
 
     // get events one month interval

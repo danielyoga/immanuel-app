@@ -59,3 +59,20 @@ function score(id){
         }
     });
 }
+
+function resetScore(id){
+    $.ajax({
+        url:  "http://localhost/immanuel-app/api/reports/reset.php",
+        type : "POST",
+        contentType: "application/json",
+        data:JSON.stringify({"id": id }),
+        dataType: 'json',
+        success: function(result){
+            alert('Nilai di reset');
+            location.reload(); 
+        },
+        error: function(xhr, resp, text){
+            alert('Gagal mereset' + text);
+        }
+    });
+}

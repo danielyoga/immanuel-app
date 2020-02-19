@@ -1,7 +1,6 @@
     <!-- GLOBAL HEAD -->
     <?php require '../view/global/head.php' ?>
 
-    <link rel="stylesheet" href="../view/pages_admin/03-home/03-home.css">
     <title>Immanuel Kids - Admin Dashboard</title>
   </head>
 

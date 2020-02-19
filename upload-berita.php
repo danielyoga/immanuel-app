@@ -1,53 +1,43 @@
-<!-- header -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Specify the character encoding for the HTML document -->
+    <meta charset="UTF-8">
 
-<div class="container-fluid center-align" style="background-color: #001D39;">
-      <!-- img = logo immanuel kids -->
-      <!-- <img src="../../img/logo.png" alt=""/> -->
-      <!-- comment : ukuran font dekapolis dibuat lebih besar -->
-      <span class="white-text" style="font-size: 5em;" id="class-container">Dekapolis</span>
-      <br>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Compiled minified Jquery -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Immanuel Kids- Upload Berita</title>
+</head>
+<body>
+    <!-- logo immanuel kids -->
+<div class="container">
+
+      <div class="row">
+        <div class="col m2 l4"></div>
+        <div class="col s12 m8 l4">
+            <img class="responsive-img" src="./view/img/logo.png" alt="">
+        </div>
+        <div class="col m2 l6"></div>
+      </div>
+    
+
+    <!-- register -->
+    <h1 class="center-align flow-text" style="color: #001D39; font-weight: 700;">Tambah Berita</h4>
       
-  </div>
-
-  <!-- buttons edit kegiatan-->
-  <div class="container-fluid center-align" style="background-color: #001D39;">
-  <br><br>
-    <div class="row">
-      <div class="col s4" id="button_absensi-container">
-        <!-- btn_absensi -->
-      </div>
-      <div class="col s4" id="button_penilaian-container">
-        <!-- btn_penilaian -->
-      </div>
-      <div class="col s4" id="button_upload-container">
-        <!-- btn_upload -->
-      </div>
-    </div>
-  <br>
-  </div>
-  <br>
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
-<script>
-$(document).ready(function(){
-  $('.modal').modal();
-  $('input[name=activity_id]').val(""+getCookie('immanuel_admin_activity'));
-  $('#class-container').html(getCookie('immanuel_admin_class'));
-  $('#button_absensi-container').html(`<a href="absensi.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo darken-4">Absensi</a>`);
-  $('#button_penilaian-container').html(`<a href="penilaian.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo darken-2">Penilaian</a>`);
-  // $('#button_upload-container').html(`<a href="upload.php?id=`+getCookie('immanuel_admin_activity')+`" class="waves-effect waves-light btn indigo lighten-2">Upload</a>`);
-  $('#button_upload-container').html(`<a class="waves-effect waves-light btn indigo lighten-2 modal-trigger" href="#modal-upload">Upload</a>`);
-});
-</script>
-
-  <!-- Modal Structure -->
-  <div id="modal-upload" class="modal">
-    <div class="modal-content">
-      <!-- <h4>Upload Media Kegiatan</h4> -->
-      <br>
-      <form id="form_upload_media" method="POST">
+    <form id="form_upload_media" method="POST">
 
       <!-- Profile Picture -->
 
@@ -94,26 +84,41 @@ $(document).ready(function(){
         document.getElementById("input_photo").addEventListener("change", readFile);
       </script>
 
-      <!-- activity Id -->
-        
-      <div class="row" style="display:none;">
-          <div class="col m3"></div>
-          <div class="input-field col s12 m6" id="parent_id-group">
-            <input id="activity_id" name="activity_id" type="text" class="validate" value=" ">
-            <label class="active" for="activity_id">Activity ID</label>
+        <!-- Tanggal -->       
+        <div class="row">
+          <div class="col s3"></div>
+          <div class="input-field col s6" id="username">
+            <input id="date" name="date" type="text">
+            <label class="active" for="date">tanggal</label>
           </div>
-          <div class="col m3"></div>
-      </div>
+          <div class="col s3"></div>
+        </div>
 
-    </div>
-    <div class="modal-footer">
-      <a href="" class="modal-close waves-effect waves-green btn-flat">Close</a>
-      <button type="submit" class="waves-effect waves-green btn-flat">Submit</a>
+
+        <div class="row">
+          <div class="col s12 center">
+                <button class="btn col s6 light-blue darken-4" type="submit" name="action" style="float:none;">
+                 Submit <i class="material-icons right">send</i>
+                </button>
+          </div>
+        </div>
+        
       </form>
-    </div>
-  </div>
+</div>
 
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.4/js/materialize.min.js"></script>
+  
   <script>
+
+    $(document).ready(function(){
+        $('#date').datepicker({format: 'yyyy-mm-dd'});
+    });
+
   // ====================================
 // submit form
 // ====================================
@@ -128,7 +133,7 @@ $(document).ready(function(){
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/medias/create.php",
+        url: "http://localhost/immanuel-app/api/events/create.php",
         type : "POST",
         contentType : 'application/json',
         data : form_data,
@@ -165,3 +170,6 @@ $(document).ready(function(){
     return o;
     };
 </script>
+    
+</body>
+</html>

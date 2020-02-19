@@ -188,6 +188,66 @@ class User{
     
         return false;
     }
+
+    // update a user record
+    public function changePasswordTeacher(){
+    
+    
+        // if no posted password, do not update the password
+        $query = "UPDATE teachers 
+                SET teachers.password = :password
+                 WHERE teacher_id = :id";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+    
+        // hash the password before saving to database
+        if(!empty($this->password)){
+            $this->password=htmlspecialchars(strip_tags($this->password));
+            $password_hash = password_hash($this->password, PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $password_hash);
+        }
+    
+        // unique ID of record to be edited
+        $stmt->bindParam(':id', $this->id);
+    
+        // execute the query
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
+    }
+
+    // update a user record
+    public function changePasswordParent(){
+    
+    
+        // if no posted password, do not update the password
+        $query = "UPDATE " . $this->table_name . "
+                 SET parents.password = :password
+                 WHERE id = :id";
+    
+        // prepare the query
+        $stmt = $this->conn->prepare($query);
+    
+        // hash the password before saving to database
+        if(!empty($this->password)){
+            $this->password=htmlspecialchars(strip_tags($this->password));
+            $password_hash = password_hash($this->password, PASSWORD_BCRYPT);
+            $stmt->bindParam(':password', $password_hash);
+        }
+    
+        // unique ID of record to be edited
+        $stmt->bindParam(':id', $this->id);
+    
+        // execute the query
+        if($stmt->execute()){
+            return true;
+        }
+    
+        return false;
+    }
 }
 
 ?>
