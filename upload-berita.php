@@ -133,7 +133,7 @@
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/events/create.php",
+        url: "https://immanuelkids-app.com/api/events/create.php",
         type : "POST",
         contentType : 'application/json',
         data : form_data,

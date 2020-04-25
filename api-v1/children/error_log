@@ -1,0 +1,5 @@
+[14-Apr-2020 13:26:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/children.php:90
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/children/getByParent.php(25): Children->getByParent()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/children.php on line 90

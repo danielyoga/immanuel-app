@@ -14,7 +14,7 @@ $(document).ready(function() {
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
+        url: "https://immanuelkids-app.com/api-v1/user/validate.php",
         type : "POST",
         contentType : 'application/json',
         data : jwt,
@@ -34,7 +34,7 @@ $(document).ready(function() {
                 }
               
                 $.ajax({
-                    url:  "http://localhost/immanuel-app/api/children/getAllByClass.php?class_id="+ class_id,
+                    url:  "https://immanuelkids-app.com/api-v1/children/getAllByClass.php?class_id="+ class_id,
                     contentType: "application/json",
                     dataType: 'json',
                     success: function(result){

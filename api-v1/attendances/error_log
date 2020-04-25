@@ -1,0 +1,10 @@
+[14-Apr-2020 13:26:51 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/attendances.php:97
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/attendances/getAllByParent.php(25): Attendances->getAllByParent()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/attendances.php on line 97
+[15-Apr-2020 07:41:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/attendances.php:68
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/attendances/getAll.php(21): Attendances->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/attendances.php on line 68

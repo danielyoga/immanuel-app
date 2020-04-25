@@ -7,7 +7,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/immanuel-app/api/reviews/getAll.php",
+  CURLOPT_URL => "https://immanuelkids-app.com/api-v1/reviews/getAll.php",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -47,7 +47,8 @@ $response = json_decode($response, true); //because of true, it's in an array
         <tbody>
             <?php
                 
-                foreach ($response['records'] as $row) {
+                if(isset($response['records'])){
+                    foreach ($response['records'] as $row) {
                     echo '<tr>';
                     echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
                     echo '<td>' . $row['review'] . '</td>';
@@ -60,6 +61,7 @@ $response = json_decode($response, true); //because of true, it's in an array
                         echo '<td></td>';
                     }
                     echo '</tr>';
+                }
                 }
                 
             ?>

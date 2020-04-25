@@ -1,0 +1,25 @@
+[15-Apr-2020 07:40:47 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/classes.php:63
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/class/getAll.php(21): Classes->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/classes.php on line 63
+[15-Apr-2020 07:40:50 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/classes.php:63
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/class/getAll.php(21): Classes->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/classes.php on line 63
+[15-Apr-2020 07:40:52 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/classes.php:63
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/class/getAll.php(21): Classes->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/classes.php on line 63
+[15-Apr-2020 07:40:58 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/classes.php:63
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/class/getAll.php(21): Classes->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/classes.php on line 63
+[15-Apr-2020 07:41:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api-v1/objects/classes.php:63
+Stack trace:
+#0 /home/immanuel/public_html/api-v1/class/getAll.php(21): Classes->getAll()
+#1 {main}
+  thrown in /home/immanuel/public_html/api-v1/objects/classes.php on line 63

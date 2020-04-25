@@ -13,7 +13,7 @@ $(document).ready(function(){
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
+        url: "https://immanuelkids-app.com/api-v1/user/validate.php",
         type : "POST",
         contentType : 'application/json',
         data : jwt,
@@ -30,7 +30,7 @@ $(document).ready(function(){
             // ====================================
 
             $.ajax({
-                url: "http://localhost/immanuel-app/api/children/getById.php?id=" + id ,
+                url: "https://immanuelkids-app.com/api-v1/children/getById.php?id=" + id ,
                 contentType: "application/json",
                 dataType: 'json',
                 success: function(result){
@@ -62,7 +62,7 @@ $(document).ready(function(){
                     // ====================================
 
                     $.ajax({
-                        url: "http://localhost/immanuel-app/api/teachers/getByClass.php?class_id=" + result[0].class_id ,
+                        url: "https://immanuelkids-app.com/api-v1/teachers/getByClass.php?class_id=" + result[0].class_id ,
                         contentType: "application/json",
                         dataType: 'json',
                         success: function(result){

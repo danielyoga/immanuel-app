@@ -12,7 +12,7 @@ $(document).ready(function() {
     
         // submit form data to api
         $.ajax({
-            url: "http://localhost/immanuel-app/api/user/changepassword.php",
+            url: "https://immanuelkids-app.com/api-v1/user/changepassword.php",
             type : "POST",
             contentType : 'application/json',
             data : form_data,

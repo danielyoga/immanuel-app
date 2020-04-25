@@ -50,8 +50,8 @@ if(!isset($_COOKIE['jwt'])) {
 // =========================
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "immanuel_master";
+$password = "immanuel.12345";
 $dbname = "immanuel_kids_db";
 
 // Create connection

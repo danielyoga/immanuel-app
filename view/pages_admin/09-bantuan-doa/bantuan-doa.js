@@ -7,7 +7,7 @@ $(document).ready(function() {
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
+        url: "https://immanuelkids-app.com/api-v1/user/validate.php",
         type : "POST",
         contentType : 'application/json',
         data : jwt,
@@ -44,7 +44,7 @@ function getCookie(cname){
 
 function markAsRead(id){
     $.ajax({
-        url:  "http://localhost/immanuel-app/api/pray/update.php",
+        url:  "https://immanuelkids-app.com/api-v1/pray/update.php",
         type : "POST",
         contentType: "application/json",
         data:JSON.stringify({"id": id }),

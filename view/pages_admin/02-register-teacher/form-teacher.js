@@ -12,7 +12,7 @@ $(document).ready(function() {
     // ====================================
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/class/getall.php" ,
+        url: "https://immanuelkids-app.com/api-v1/class/getAll.php" ,
         type : "GET",
         contentType: "application/json",
         dataType: 'json',
@@ -35,9 +35,9 @@ $(document).ready(function() {
 
         },
         error: function(xhr, resp, text){
-            alert('something wrong, please call admin.');
-            var url= "home.php"; 
-            window.location = url; 
+            // alert('something wrong, please call admin.');
+            // var url= "home.php"; 
+            // window.location = url; 
         }
     })
 
@@ -57,7 +57,7 @@ $(document).on('submit', '#form_register_children', function(e){
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/teachers/create.php",
+        url: "https://immanuelkids-app.com/api-v1/teachers/create.php",
         type : "POST",
         contentType : 'application/json',
         data : form_data,

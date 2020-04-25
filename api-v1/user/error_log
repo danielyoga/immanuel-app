@@ -1,0 +1,25 @@
+[19-Feb-2020 15:05:41 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api/objects/user.php:37
+Stack trace:
+#0 /home/immanuel/public_html/api/user/register.php(35): User->create()
+#1 {main}
+  thrown in /home/immanuel/public_html/api/objects/user.php on line 37
+[19-Feb-2020 15:06:00 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api/objects/user.php:72
+Stack trace:
+#0 /home/immanuel/public_html/api/user/login.php(26): User->phone_numberExists()
+#1 {main}
+  thrown in /home/immanuel/public_html/api/objects/user.php on line 72
+[19-Feb-2020 15:06:07 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api/objects/user.php:72
+Stack trace:
+#0 /home/immanuel/public_html/api/user/login.php(26): User->phone_numberExists()
+#1 {main}
+  thrown in /home/immanuel/public_html/api/objects/user.php on line 72
+[23-Feb-2020 13:24:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api/objects/user.php:72
+Stack trace:
+#0 /home/immanuel/public_html/api/user/login.php(26): User->phone_numberExists()
+#1 {main}
+  thrown in /home/immanuel/public_html/api/objects/user.php on line 72
+[23-Feb-2020 13:24:16 UTC] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home/immanuel/public_html/api/objects/user.php:72
+Stack trace:
+#0 /home/immanuel/public_html/api/user/login.php(26): User->phone_numberExists()
+#1 {main}
+  thrown in /home/immanuel/public_html/api/objects/user.php on line 72

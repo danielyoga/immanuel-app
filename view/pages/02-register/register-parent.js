@@ -12,7 +12,7 @@ $(document).ready(function() {
     
         // submit form data to api
         $.ajax({
-            url: "http://localhost/immanuel-app/api/user/register.php",
+            url: "https://immanuelkids-app.com/api-v1/user/register.php",
             type : "POST",
             contentType : 'application/json',
             data : form_data,

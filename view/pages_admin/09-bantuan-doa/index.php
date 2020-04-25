@@ -7,7 +7,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/immanuel-app/api/pray/getAll.php",
+  CURLOPT_URL => "https://immanuelkids-app.com/api-v1/pray/getAll.php",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -29,7 +29,9 @@ $response = json_decode($response, true); //because of true, it's in an array
 <link rel="stylesheet" href="../view/pages_admin/09-bantuan-doa/css/datatables.min.css" type="text/css">
 <title>Immanuel Kids- Bantuan Doa</title>
 </head>
-<body><a href="javascript:window.location=window.history.go(-1);;">Back to home</a>
+<body>
+    
+<a href="javascript:window.history.go(-1);">Back to home</a>
 
 <br><br>
 <h1 style="text-align:center;">Bantuan Doa</h1>
@@ -48,19 +50,21 @@ $response = json_decode($response, true); //because of true, it's in an array
         
         <?php
 
-            foreach ($response['records'] as $row) {
-                echo '<tr>';
-                echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
-                echo '<td>' . $row['pray'] . '</td>';
-
-                // Button read
-                if($row['isRead'] != 1){
-                    echo '<td><input type="button" onclick="javascript:markAsRead(`'.$row['id'].'`);" value="Read"></td>';
+            if(isset($response['records'])){
+                foreach ($response['records'] as $row) {
+                    echo '<tr>';
+                    echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
+                    echo '<td>' . $row['pray'] . '</td>';
+    
+                    // Button read
+                    if($row['isRead'] != 1){
+                        echo '<td><input type="button" onclick="javascript:markAsRead(`'.$row['id'].'`);" value="Read"></td>';
+                    }
+                    else{
+                        echo '<td></td>';
+                    }
+                    echo '</tr>';
                 }
-                else{
-                    echo '<td></td>';
-                }
-                echo '</tr>';
             }
 
         ?>

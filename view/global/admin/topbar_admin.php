@@ -63,7 +63,7 @@
         }
 
         $.ajax({
-            url:  "http://localhost/immanuel-app/api/class/getall.php",
+            url:  "https://immanuelkids-app.com/api-v1/class/getAll.php",
             contentType: "application/json",
             dataType: 'json',
             success: function(result){
@@ -82,8 +82,8 @@
                 $("#class_name-container").html(name_class);
             },
             error: function(xhr, resp, text){
-              var url= window.history.go(-1);; 
-              window.location = url; 
+            //   var url= window.history.go(-1);; 
+            //   window.location = url; 
             }
         });
     });

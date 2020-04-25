@@ -13,7 +13,7 @@ $(document).ready(function(){
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
+        url: "https://immanuelkids-app.com/api-v1/user/validate.php",
         type : "POST",
         contentType : 'application/json',
         data : jwt,
@@ -46,7 +46,7 @@ $(document).on('submit', '#form_register_pray', function(e){
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/pray/create.php",
+        url: "https://immanuelkids-app.com/api-v1/pray/create.php",
         type : "POST",
         contentType : 'application/json',
         data : form_data,

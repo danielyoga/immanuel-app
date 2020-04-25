@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/attendances/getById.php?id="+id,
+        url: "https://immanuelkids-app.com/api-v1/attendances/getById.php?id="+id,
         type : "POST",
         contentType : 'application/json',
         success : function(result) {
@@ -33,7 +33,7 @@ $(document).ready(function() {
         
         // submit form data to api
         $.ajax({
-            url: "http://localhost/immanuel-app/api/attendances/submitReason.php",
+            url: "https://immanuelkids-app.com/api-v1/attendances/submitReason.php",
             type : "POST",
             contentType : 'application/json',
             data : form_data,
@@ -81,7 +81,7 @@ $('#btn_decline').click(function(){
 
     // submit form data to api
     $.ajax({
-        url: "http://localhost/immanuel-app/api/attendances/submitReason.php",
+        url: "https://immanuelkids-app.com/api-v1/attendances/submitReason.php",
         type : "POST",
         contentType : 'application/json',
         data : data_submit,

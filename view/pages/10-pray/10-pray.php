@@ -19,7 +19,7 @@
         <h1>Pray</h1>
         <hr>
 
-        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+        
         
         <br><br>
       
@@ -37,7 +37,7 @@
         <!-- PRAYER -->
         <div class="input-field col s12">
           <textarea id="pray" name="pray" class="materialize-textarea" required></textarea>
-          <label for="pray">Saran & Kritik</label>
+          <label for="pray">Kami siap mendoakan pergumulan anda</label>
         </div>
 
         
@@ -53,7 +53,7 @@
     <br><br>
 
       <!-- konseling button -->    
-    <a target="__blank" href="https://api.whatsapp.com/send?phone=<nomor-pembina>" class="waves-effect waves-light btn">
+    <a target="__blank" href="https://api.whatsapp.com/send?phone=+6281333385520" class="waves-effect waves-light btn">
       <i class="material-icons">message</i> Konseling via WA
     </a>
               

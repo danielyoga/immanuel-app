@@ -17,7 +17,7 @@
         <h1>Saran dan Kritik</h1>
         <hr>
 
-        <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h6>
+        
         
         <br><br>
       

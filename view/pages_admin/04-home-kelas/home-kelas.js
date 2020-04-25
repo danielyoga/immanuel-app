@@ -14,7 +14,7 @@ $(document).ready(function() {
     var jwt = JSON.stringify( {jwt: getCookie('jwt')} );
 
     $.ajax({
-        url: "http://localhost/immanuel-app/api/user/validate.php",
+        url: "https://immanuelkids-app.com/api-v1/user/validate.php",
         type : "POST",
         contentType : 'application/json',
         data : jwt,
@@ -26,12 +26,12 @@ $(document).ready(function() {
                 var class_id = url.searchParams.get("id");
               
                 //safety handling
-                if(class_id != result.data.class_id && result.data.class_id != "0"){
-                  // not give an access for page
-                  var url= window.history.go(-1); 
-                  window.location = url;
-                  return false;
-                }
+                // if(class_id != result.data.class_id && result.data.class_id != "0"){
+                //   // not give an access for page
+                //   var url= window.history.go(-1); 
+                //   window.location = url;
+                //   return false;
+                // }
 
 
                 // install float button
@@ -41,7 +41,7 @@ $(document).ready(function() {
                 month= now.getMonth() + 1;
 
                 $.ajax({
-                    url:  "http://localhost/immanuel-app/api/activities/getByClass.php?id="+ class_id + "&month=" + month,
+                    url:  "https://immanuelkids-app.com/api-v1/activities/getByClass.php?id="+ class_id + "&month=" + month,
                     contentType: "application/json",
                     dataType: 'json',
                     success: function(result){
@@ -142,7 +142,7 @@ function showActivityOnMonth(month){
     var class_id = url.searchParams.get("id");
 
     $.ajax({
-        url:  "http://localhost/immanuel-app/api/activities/getByClass.php?id="+ class_id + "&month=" + month,
+        url:  "https://immanuelkids-app.com/api-v1/activities/getByClass.php?id="+ class_id + "&month=" + month,
         contentType: "application/json",
         dataType: 'json',
         success: function(result){

@@ -6,7 +6,7 @@
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://localhost/immanuel-app/api/attendances/getAll.php",
+  CURLOPT_URL => "https://immanuelkids-app.com/api-v1/attendances/getAll.php",
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
@@ -47,20 +47,22 @@ $response = json_decode($response, true); //because of true, it's in an array
 
 <?php
 
-foreach ($response['records'] as $row) {
-    echo '<tr>';
-    echo '<td>' . $row['child_name'] . '</td>';
-    echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
-    echo '<td>' . $row['keterangan'] . '</td>';
-
-    // Button read
-    if($row['isRead'] != 1){
-        echo '<td><input type="button" onclick="javascript:markAsRead(`'.$row['id'].'`);" value="Read"></td>';
+if(isset($response['records'])){
+    foreach ($response['records'] as $row) {
+        echo '<tr>';
+        echo '<td>' . $row['child_name'] . '</td>';
+        echo '<td>' . $row['parent_title'] . ' ' . $row['parent_name'] . '</td>';
+        echo '<td>' . $row['keterangan'] . '</td>';
+    
+        // Button read
+        if($row['isRead'] != 1){
+            echo '<td><input type="button" onclick="javascript:markAsRead(`'.$row['id'].'`);" value="Read"></td>';
+        }
+        else{
+            echo '<td></td>';
+        }
+        echo '</tr>';
     }
-    else{
-        echo '<td></td>';
-    }
-    echo '</tr>';
 }
 
 ?>
